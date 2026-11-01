@@ -165,6 +165,11 @@ class Handler(BaseHTTPRequestHandler):
         if path in ("/", "/index.html"):
             html = (ROOT / "src" / "app_template.html").read_text(encoding="utf-8")
             return self._send(200, html.encode("utf-8"), "text/html; charset=utf-8")
+        if path == "/dashboard":   # ตารางสรุปจากงานสแกน 08:00 (output/dashboard.html)
+            page = ROOT / "output" / "dashboard.html"
+            if not page.exists():
+                return self._json(404, {"error": "ยังไม่มี dashboard รัน python src/scan.py ก่อน"})
+            return self._send(200, page.read_bytes(), "text/html; charset=utf-8")
         fn = ROUTES.get(path)
         if fn is None:
             return self._json(404, {"error": "ไม่มีหน้านี้"})
