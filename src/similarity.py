@@ -132,3 +132,26 @@ def similarity_scores(template: Template, prices: dict[str, pd.DataFrame], end_i
     out["sim_features"] = 100 * np.exp(-0.6 * out["d_features"].fillna(3))
     out["similarity"] = sum(out[f"sim_{k}"] * w for k, w in WEIGHTS.items())
     return out
+
+
+def sketch_shape(points: list[float]) -> np.ndarray:
+    """เส้นที่ผู้ใช้วาด (ค่า y จากซ้ายไปขวา ค่ามาก = ราคาสูง) → รูปทรงที่เทียบกับราคาได้"""
+    return zscore(resample(np.asarray(points, dtype=float)))
+
+
+def sketch_scores(points: list[float], length: int, prices: dict[str, pd.DataFrame],
+                  end_idx: dict[str, int]) -> pd.DataFrame:
+    """ความเหมือน 0–100 ระหว่างทรงที่วาดกับราคาช่วงล่าสุดของทุกหุ้น (ยืดหดความยาวได้ ±25–33%)"""
+    shape = sketch_shape(points)
+    best: dict[str, tuple[float, int]] = {}
+    for k in SCALES:
+        n = max(20, int(round(length * k)))
+        symbols, pp, _ = candidate_paths(prices, end_idx, n)
+        if not symbols:
+            continue
+        for s, d in zip(symbols, dtw_batch(shape, pp)):
+            if s not in best or d < best[s][0]:
+                best[s] = (d, n)
+    out = pd.DataFrame.from_dict(best, orient="index", columns=["d_shape", "window"])
+    out["similarity"] = 100 * np.exp(-1.5 * out["d_shape"])
+    return out

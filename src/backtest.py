@@ -93,6 +93,8 @@ def run(stocks: dict[str, Stock]) -> dict:
     by_market = {m: [s for s in stocks.values() if s.market == m] for m in ("SET", "US")}
     base = {m: baseline(lst) for m, lst in by_market.items()}
     for setup in load_setups():
+        if setup["type"] not in ("builtin", "rule"):
+            continue   # ทรงวาด/ตัวอย่างที่ยังไม่มีสูตร ยังไม่มีเงื่อนไขให้จำลองสัญญาณย้อนหลัง
         ex = examples[examples["setup"] == setup["name"]]
         ex_dates = {}
         for _, e in ex.iterrows():

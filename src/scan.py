@@ -15,7 +15,7 @@ from common import MIN_TRADED_VALUE, OUTPUT_DIR, ROOT, load_examples, price_meta
 from detector import FEATURES, builtin_score, feature_value_text
 from market import Stock, find_stock, load_market
 from setups import evaluate, load_setups, reasons
-from similarity import Template, build_template, feature_scale, similarity_scores
+from similarity import Template, build_template, feature_scale, similarity_scores, sketch_scores
 
 TOP_PER_MARKET = 40
 TOP_SIMILAR = 15
@@ -65,13 +65,22 @@ def scan_setup(setup: dict, stocks: dict[str, Stock], end_idx: dict[str, int], t
                                  for t in bads], axis=1).max(axis=1)
             table["like_bad"] = bad_sim > table["similarity"]
             table.loc[table["like_bad"], "similarity"] *= 0.7
-    rank_col = "similarity" if goods else "score"
+    if setup.get("sketch") and not goods:
+        prices = {s: stocks[s].prices for s in liquid.index}
+        sk = sketch_scores(setup["sketch"], setup["length"], prices, end_idx)
+        table["similarity"] = sk["similarity"]
+        table["sim_shape"] = sk["similarity"]
+        table["sim_volume"] = float("nan")
+        table["sim_features"] = float("nan")
+        table["best_example"] = "ทรงที่วาด"
+    has_sim = "similarity" in table
+    rank_col = "similarity" if has_sim else "score"
 
     signals = []
     for market in ("SET", "US"):
         sub = table[[stocks[s].market == market for s in table.index]]
         chosen = sub[sub["passed"]].sort_values(rank_col, ascending=False).head(TOP_PER_MARKET)
-        if goods:
+        if has_sim:
             similar = sub[~sub["passed"]].sort_values("similarity", ascending=False).head(TOP_SIMILAR)
             chosen = pd.concat([chosen, similar])
         for sym, r in chosen.iterrows():
@@ -84,9 +93,10 @@ def scan_setup(setup: dict, stocks: dict[str, Stock], end_idx: dict[str, int], t
                 "setup": setup["name"], "ticker": s.ticker, "market": market, "name": s.name,
                 "date": s.prices.index[i].strftime("%Y-%m-%d"), "close": close,
                 "passed": bool(r["passed"]), "score": round(float(r["score"]), 1),
-                "similarity": round(float(r["similarity"]), 1) if goods else None,
-                "sim_parts": {k: round(float(r[k]), 1) for k in ("sim_shape", "sim_volume", "sim_features")} if goods else None,
-                "best_example": r.get("best_example") if goods else None,
+                "similarity": round(float(r["similarity"]), 1) if has_sim else None,
+                "sim_parts": {k: (None if pd.isna(r[k]) else round(float(r[k]), 1))
+                              for k in ("sim_shape", "sim_volume", "sim_features")} if has_sim else None,
+                "best_example": r.get("best_example") if has_sim else None,
                 "like_bad": bool(r.get("like_bad", False)),
                 "stop": round(base_low * 0.99, 4), "risk_pct": round(1 - base_low * 0.99 / close, 4),
                 "base_low": base_low, "base_top": float(f["base_top"]),
@@ -100,20 +110,12 @@ def scan_setup(setup: dict, stocks: dict[str, Stock], end_idx: dict[str, int], t
     return signals, examples
 
 
-def render(payload: dict) -> None:
-    template = (ROOT / "src" / "dashboard_template.html").read_text(encoding="utf-8")
-    data = json.dumps(payload, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
-    (OUTPUT_DIR / "dashboard.html").write_text(template.replace("__DATA__", data), encoding="utf-8")
+def latest_date(stocks: dict[str, Stock]) -> pd.Timestamp:
+    return max(s.prices.index[-1] for s in stocks.values())
 
 
-def main() -> None:
-    ap = argparse.ArgumentParser()
-    ap.add_argument("--date")
-    a = ap.parse_args()
-    stocks = load_market()
-    latest = max(s.prices.index[-1] for s in stocks.values())
-    scan_date = pd.Timestamp(a.date) if a.date else latest
-
+def prepare(stocks: dict[str, Stock], scan_date: pd.Timestamp):
+    """ตำแหน่งแถวของวันสแกนในแต่ละหุ้น + ตัววัดของวันนั้น + สเกลของตัววัด"""
     end_idx, rows = {}, []
     for sym, s in stocks.items():
         i = int(s.prices.index.searchsorted(scan_date, side="right")) - 1
@@ -126,7 +128,22 @@ def main() -> None:
         rows.append(row.rename(sym))
     today = pd.DataFrame(rows)
     today["liquid"] = today["liquid"].astype(bool)
-    scale = feature_scale(today[today["liquid"]])
+    return end_idx, today, feature_scale(today[today["liquid"]])
+
+
+def render(payload: dict) -> None:
+    template = (ROOT / "src" / "dashboard_template.html").read_text(encoding="utf-8")
+    data = json.dumps(payload, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
+    (OUTPUT_DIR / "dashboard.html").write_text(template.replace("__DATA__", data), encoding="utf-8")
+
+
+def main() -> None:
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--date")
+    a = ap.parse_args()
+    stocks = load_market()
+    scan_date = pd.Timestamp(a.date) if a.date else latest_date(stocks)
+    end_idx, today, scale = prepare(stocks, scan_date)
 
     backtest_path = OUTPUT_DIR / "backtest.json"
     backtest = json.loads(backtest_path.read_text(encoding="utf-8")) if backtest_path.exists() else {}

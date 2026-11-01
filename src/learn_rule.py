@@ -192,6 +192,10 @@ def learn(name: str, title: str | None, stocks: dict[str, Stock] | None = None) 
         "description": f"เรียนจากรูปตัวอย่าง good {len(good)} รูป bad {len(bad)} รูป ด้วยวิธี{method}",
     }
     SETUPS_DIR.mkdir(exist_ok=True)
+    old_path = SETUPS_DIR / f"{name}.json"
+    if old_path.exists():   # set-up ที่เริ่มจากทรงวาด เก็บทรงไว้ใช้เรียงอันดับต่อ
+        old = json.loads(old_path.read_text(encoding="utf-8"))
+        setup.update({k: old[k] for k in ("sketch", "length") if k in old})
     (SETUPS_DIR / f"{name}.json").write_text(json.dumps(setup, indent=2, ensure_ascii=False), encoding="utf-8")
     write_report(name, title, conds, feats, base, method)
     print(f"สูตร '{title}' ({method}):")

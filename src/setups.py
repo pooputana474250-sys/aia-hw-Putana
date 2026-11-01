@@ -3,6 +3,8 @@
 ชนิด set-up:
   builtin  ใช้คะแนนชั้น A (detector.builtin_score) ≥ min_score
   rule     ทุกเงื่อนไขใน conditions ต้องผ่าน (สร้างโดย learn_rule.py หรือเขียนเอง)
+  sketch   ทรงที่วาดเองในหน้า app (sketch = ค่า y, length = จำนวนวัน) เรียงตามความเหมือน
+  examples มีรูปตัวอย่างแต่ยังไม่มีสูตร เรียงตามความเหมือนกับรูปตัวอย่าง
 """
 from __future__ import annotations
 
@@ -54,7 +56,7 @@ def evaluate(setup: dict, f: pd.DataFrame) -> tuple[pd.Series, pd.Series]:
     score, _ = builtin_score(f)
     if setup["type"] == "builtin":
         return score >= setup.get("min_score", 65), score
-    if setup["type"] == "examples":   # มีแค่รูปตัวอย่าง ยังไม่มีสูตร: จัดอันดับด้วยความเหมือนอย่างเดียว
+    if setup["type"] in ("examples", "sketch"):   # ยังไม่มีสูตร: จัดอันดับด้วยความเหมือนอย่างเดียว
         return pd.Series(False, index=f.index), score
     passed = pd.Series(True, index=f.index)
     for cond in setup["conditions"]:

@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Setup Screener</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f6f5f1; --panel: #ffffff; --ink: #1d1d1b; --muted: #6b6a64; --line: #e3e1da;
+  --accent: #2f5d8a; --up: #1f8a5b; --down: #c4453c; --chip: #eeece6; --base: #2f5d8a26; --sel: #b7791f33;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #151514; --panel: #1e1e1c; --ink: #ecebe6; --muted: #9a9890; --line: #33322e;
+    --accent: #79a7d6; --up: #3fbf86; --down: #e2665c; --chip: #2a2a27; --base: #79a7d626; --sel: #e0a84a33;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #151514; --panel: #1e1e1c; --ink: #ecebe6; --muted: #9a9890; --line: #33322e;
+  --accent: #79a7d6; --up: #3fbf86; --down: #e2665c; --chip: #2a2a27; --base: #79a7d626; --sel: #e0a84a33;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.55 "IBM Plex Sans Thai", system-ui, sans-serif; }
+.num { font-family: "IBM Plex Mono", ui-monospace, monospace; font-variant-numeric: tabular-nums; }
+header, main { max-width: 1200px; margin: 0 auto; padding: 0 16px; }
+header { padding-top: 20px; }
+h1 { font-size: 22px; margin: 0; font-weight: 600; }
+.sub, .desc { color: var(--muted); font-size: 13px; }
+.desc { margin: 4px 0 10px; }
+.tabs { display: flex; gap: 6px; flex-wrap: wrap; margin: 16px 0 12px; }
+.tabs button { border-radius: 99px; }
+button, input, select { font: inherit; color: var(--ink); background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 6px 12px; }
+button { cursor: pointer; }
+button.on, button.primary { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+button:disabled { opacity: .45; cursor: not-allowed; }
+input[type=range] { padding: 0; }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; margin-bottom: 14px; }
+.card h2 { font-size: 16px; margin: 0; font-weight: 600; }
+.row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin: 8px 0; }
+.row label { font-size: 13px; color: var(--muted); }
+canvas { width: 100%; max-width: 760px; aspect-ratio: 760 / 280; display: block; border: 1px dashed var(--line); border-radius: 10px; background: var(--bg); touch-action: none; cursor: crosshair; }
+.pick svg { cursor: col-resize; user-select: none; }
+.drop { border: 1px dashed var(--line); border-radius: 10px; padding: 22px; text-align: center; color: var(--muted); cursor: pointer; }
+.drop.over { border-color: var(--accent); color: var(--accent); }
+.upl { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 14px; }
+@media (max-width: 800px) { .upl { grid-template-columns: 1fr; } }
+.upl img { max-width: 100%; border-radius: 8px; border: 1px solid var(--line); }
+.form { display: grid; grid-template-columns: auto 1fr; gap: 6px 10px; align-items: center; font-size: 14px; }
+.results { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 10px; }
+.res { border: 1px solid var(--line); border-radius: 10px; padding: 8px 10px; background: var(--panel); }
+.res.good { border-color: var(--up); } .res.bad { border-color: var(--down); }
+.res .top { display: flex; justify-content: space-between; align-items: baseline; gap: 6px; }
+.res .sim { font: 500 18px "IBM Plex Mono", monospace; }
+.res .acts { display: flex; gap: 6px; margin-top: 4px; }
+.res .acts button { padding: 2px 10px; font-size: 13px; }
+.tag { display: inline-block; font-size: 11px; padding: 1px 7px; border-radius: 99px; background: var(--chip); color: var(--muted); }
+.tag.pass { background: color-mix(in srgb, var(--up) 18%, transparent); color: var(--up); }
+.msg { font-size: 14px; padding: 8px 12px; border-radius: 8px; background: var(--chip); margin: 8px 0; display: none; }
+.msg.err { background: color-mix(in srgb, var(--down) 15%, transparent); color: var(--down); }
+.msg.show { display: block; }
+ul.conds { margin: 6px 0; padding-left: 18px; font-size: 14px; }
+svg text { fill: var(--muted); font: 10px "IBM Plex Mono", monospace; }
+.hidden { display: none; }
+footer { max-width: 1200px; margin: 0 auto; padding: 8px 16px 32px; color: var(--muted); font-size: 12px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Setup Screener · ใส่ทรงกราฟแล้ววิเคราะห์</h1>
+  <div class="sub" id="meta">กำลังโหลด…</div>
+</header>
+<main>
+  <div class="tabs">
+    <button data-tab="sketch" class="on">✏️ วาดทรง</button>
+    <button data-tab="pick">📈 เลือกจากกราฟจริง</button>
+    <button data-tab="upload">🖼️ อัปโหลดรูปกราฟ</button>
+    <button data-tab="saved">📁 set-up ที่บันทึกไว้</button>
+  </div>
+
+  <section id="tab-sketch" class="card">
+    <h2>วาดทรงกราฟที่ชอบ</h2>
+    <p class="desc">ลากเมาส์จากซ้ายไปขวาเป็นทรงราคา (สูง = ราคาสูง) ระบบจะเทียบกับราคาช่วงล่าสุดของทุกหุ้น โดยยืดหดความยาวได้</p>
+    <canvas id="pad" width="760" height="280"></canvas>
+    <div class="row">
+      <button id="sk-clear">ล้าง</button>
+      <button id="sk-preset">ใส่ทรงตัวอย่าง: สะสมโซนล่างหลังขาลง</button>
+      <label for="sk-len">ทรงนี้ยาวประมาณ</label>
+      <input type="range" id="sk-len" min="40" max="250" value="120" step="5">
+      <span class="num" id="sk-len-v">120 วัน</span>
+      <button class="primary" id="sk-run">วิเคราะห์</button>
+    </div>
+    <div class="row hidden" id="sk-save-row">
+      <label for="sk-name">บันทึกเป็น set-up ชื่อ</label>
+      <input id="sk-name" placeholder="เช่น ฐานล่างของผม">
+      <button id="sk-save">บันทึก</button>
+    </div>
+  </section>
+
+  <section id="tab-pick" class="card hidden pick">
+    <h2>เลือกช่วงฐานจากกราฟจริง</h2>
+    <p class="desc">พิมพ์ชื่อหุ้น แล้วลากบนกราฟจากจุดที่ฐานเริ่ม (ขาลงจบ) ไปถึงวันก่อนเข้าซื้อ ระบบจะใช้ขาลงก่อนหน้าประกอบด้วย</p>
+    <div class="row">
+      <input id="pk-ticker" list="tickers" placeholder="ชื่อหุ้น เช่น PTT หรือ AAPL" style="min-width:220px">
+      <button id="pk-load">โหลดกราฟ</button>
+      <span class="sub" id="pk-name"></span>
+    </div>
+    <div id="pk-chart"></div>
+    <div class="row">
+      <span class="sub">ฐานเริ่ม</span><input id="pk-start" type="date">
+      <span class="sub">วันเข้าซื้อ</span><input id="pk-entry" type="date">
+    </div>
+    <div class="row">
+      <label for="pk-setup">เป็นตัวอย่างของ set-up</label>
+      <input id="pk-setup" list="setup-names" placeholder="ตั้งชื่อทรง เช่น ฐานล่างของผม">
+      <select id="pk-label"><option value="good">ใช่ทรงนี้ (good)</option><option value="bad">หน้าคล้ายแต่ไม่ใช่ (bad)</option></select>
+      <button class="primary" id="pk-add">เพิ่มเป็นตัวอย่างแล้ววิเคราะห์</button>
+    </div>
+  </section>
+
+  <section id="tab-upload" class="card hidden">
+    <h2>อัปโหลดรูปกราฟ</h2>
+    <p class="desc">รูปจะถูกเก็บใน examples/inbox/ · กรอกชื่อหุ้นและช่วงวันตามที่เห็นในรูป ถ้าอ่านวันที่ในรูปไม่ออก บอก Claude ว่า "อ่านรูปใน inbox ให้หน่อย"</p>
+    <div class="upl">
+      <div>
+        <div class="drop" id="drop">ลากรูปมาวาง หรือคลิกเพื่อเลือกไฟล์ (png / jpg)</div>
+        <input type="file" id="file" accept="image/png,image/jpeg,image/webp" class="hidden">
+        <img id="preview" class="hidden" alt="รูปกราฟที่อัปโหลด">
+      </div>
+      <div class="form">
+        <label for="up-ticker">ชื่อหุ้น</label><input id="up-ticker" list="tickers" placeholder="PTT หรือ AAPL">
+        <label for="up-start">ฐานเริ่ม</label><input id="up-start" type="date">
+        <label for="up-entry">วันเข้าซื้อ</label><input id="up-entry" type="date">
+        <label for="up-setup">set-up</label><input id="up-setup" list="setup-names" placeholder="ตั้งชื่อทรง">
+        <label for="up-label">ป้าย</label><select id="up-label"><option value="good">ใช่ทรงนี้ (good)</option><option value="bad">หน้าคล้ายแต่ไม่ใช่ (bad)</option></select>
+        <span></span><button class="primary" id="up-add">เพิ่มเป็นตัวอย่างแล้ววิเคราะห์</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="tab-saved" class="card hidden">
+    <h2>set-up ที่บันทึกไว้</h2>
+    <div class="row"><select id="sv-setup"></select><button class="primary" id="sv-run">สแกนวันนี้</button></div>
+  </section>
+
+  <div class="msg" id="msg"></div>
+
+  <section class="card hidden" id="ctx">
+    <h2 id="ctx-title"></h2>
+    <p class="desc" id="ctx-desc"></p>
+    <ul class="conds" id="ctx-conds"></ul>
+    <div class="row">
+      <button id="learn" class="primary">สรุปเป็นสูตรสแกน</button>
+      <span class="sub" id="learn-hint"></span>
+    </div>
+    <div class="results" id="ctx-examples"></div>
+  </section>
+
+  <section class="card hidden" id="out">
+    <div class="row" style="justify-content:space-between">
+      <h2 id="out-title">ผลการวิเคราะห์</h2>
+      <div><button data-m="ALL" class="mk on">ทั้งหมด</button> <button data-m="SET" class="mk">หุ้นไทย</button> <button data-m="US" class="mk">หุ้นสหรัฐ</button></div>
+    </div>
+    <p class="desc" id="out-desc"></p>
+    <div class="results" id="results"></div>
+  </section>
+</main>
+<datalist id="tickers"></datalist>
+<datalist id="setup-names"></datalist>
+<footer>คัดกรองหุ้นตามทรงที่ผู้ใช้กำหนดเท่านั้น ไม่ใช่คำแนะนำการลงทุน · ราคาจาก Yahoo Finance ผ่าน yfinance</footer>
+<script>
+const $ = (id) => document.getElementById(id);
+let STATE = null, current = null, market = "ALL";
+
+async function api(path, body) {
+  const res = await fetch(path, body ? { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) } : {});
+  const data = await res.json();
+  if (!res.ok) throw new Error(data.error || res.statusText);
+  return data;
+}
+function msg(text, err = false) { const m = $("msg"); m.textContent = text; m.className = "msg show" + (err ? " err" : ""); if (!text) m.className = "msg"; }
+async function busy(btn, text, fn) {
+  const old = btn.textContent; btn.disabled = true; btn.textContent = text; msg("");
+  try { return await fn(); } catch (e) { msg(e.message, true); } finally { btn.disabled = false; btn.textContent = old; }
+}
+
+function chart(b, opt = {}) {
+  const W = opt.w || 640, H = opt.h || 300, volH = H * 0.18, pad = { l: 4, r: 44, t: 6, b: 14 };
+  const n = b.c.length, priceH = H - volH - pad.t - pad.b - 4;
+  const lo = Math.min(...b.l), hi = Math.max(...b.h);
+  const y = (p) => pad.t + (hi - p) / (hi - lo || 1) * priceH;
+  const bw = (W - pad.l - pad.r) / n, x = (i) => pad.l + i * bw + bw / 2;
+  const vmax = Math.max(...b.v) || 1;
+  let s = `<svg viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="กราฟราคา" data-n="${n}" data-l="${pad.l}" data-r="${pad.r}" data-w="${W}">`;
+  if (opt.sel) s += `<rect x="${x(opt.sel[0]) - bw / 2}" y="0" width="${(opt.sel[1] - opt.sel[0] + 1) * bw}" height="${H - pad.b}" fill="var(--sel)"/>`;
+  if (opt.baseLow != null) s += `<rect x="${opt.baseStartIdx != null ? x(opt.baseStartIdx) : pad.l}" y="${y(opt.baseTop)}" width="${W - pad.r - (opt.baseStartIdx != null ? x(opt.baseStartIdx) : pad.l)}" height="${y(opt.baseLow) - y(opt.baseTop)}" fill="var(--base)"/>`;
+  for (let k = 0; k <= 3; k++) { const p = lo + (hi - lo) * k / 3; s += `<line x1="${pad.l}" x2="${W - pad.r}" y1="${y(p)}" y2="${y(p)}" stroke="var(--line)"/><text x="${W - pad.r + 3}" y="${y(p) + 3}">${p.toFixed(p < 10 ? 2 : 1)}</text>`; }
+  for (let i = 0; i < n; i++) {
+    const col = b.c[i] >= b.o[i] ? "var(--up)" : "var(--down)";
+    s += `<line x1="${x(i)}" x2="${x(i)}" y1="${y(b.h[i])}" y2="${y(b.l[i])}" stroke="${col}" stroke-width="${Math.min(1, bw)}"/>`;
+    s += `<rect x="${x(i) - bw * 0.35}" y="${y(Math.max(b.o[i], b.c[i]))}" width="${Math.max(0.6, bw * 0.7)}" height="${Math.max(0.8, Math.abs(y(b.o[i]) - y(b.c[i])))}" fill="${col}"/>`;
+    const vh = b.v[i] / vmax * volH;
+    s += `<rect x="${x(i) - bw * 0.35}" y="${H - pad.b - vh}" width="${Math.max(0.6, bw * 0.7)}" height="${vh}" fill="${col}" opacity="0.3"/>`;
+  }
+  if (opt.markIdx != null && opt.markIdx >= 0) s += `<line x1="${x(opt.markIdx)}" x2="${x(opt.markIdx)}" y1="${pad.t}" y2="${H - pad.b}" stroke="var(--accent)" stroke-dasharray="3 3"/>`;
+  s += `<text x="${pad.l}" y="${H - 2}">${b.d[0]}</text><text x="${W - pad.r}" y="${H - 2}" text-anchor="end">${b.d[n - 1]}</text></svg>`;
+  return s;
+}
+
+/* ---------- วาดทรง ---------- */
+const pad = $("pad"), ctx2 = pad.getContext("2d");
+let stroke = [];
+function css(v) { return getComputedStyle(document.documentElement).getPropertyValue(v).trim(); }
+function drawPad() {
+  ctx2.clearRect(0, 0, pad.width, pad.height);
+  ctx2.strokeStyle = css("--line"); ctx2.lineWidth = 1;
+  for (let k = 1; k < 4; k++) { ctx2.beginPath(); ctx2.moveTo(0, pad.height * k / 4); ctx2.lineTo(pad.width, pad.height * k / 4); ctx2.stroke(); }
+  if (!stroke.length) { ctx2.fillStyle = css("--muted"); ctx2.font = "15px 'IBM Plex Sans Thai'"; ctx2.fillText("ลากเมาส์วาดทรงราคาตรงนี้ (ซ้าย = อดีต, ขวา = วันนี้)", 20, 30); return; }
+  ctx2.strokeStyle = css("--accent"); ctx2.lineWidth = 3; ctx2.lineJoin = "round"; ctx2.beginPath();
+  stroke.forEach((p, i) => i ? ctx2.lineTo(p[0], p[1]) : ctx2.moveTo(p[0], p[1])); ctx2.stroke();
+}
+function padPoint(e) { const r = pad.getBoundingClientRect(); return [(e.clientX - r.left) * pad.width / r.width, (e.clientY - r.top) * pad.height / r.height]; }
+let drawing = false;
+pad.addEventListener("pointerdown", (e) => { drawing = true; stroke = [padPoint(e)]; pad.setPointerCapture(e.pointerId); drawPad(); });
+pad.addEventListener("pointermove", (e) => { if (drawing) { stroke.push(padPoint(e)); drawPad(); } });
+pad.addEventListener("pointerup", () => { drawing = false; });
+function sketchPoints() {
+  // เรียงตามแกนเวลา แล้วเก็บค่าสูงสุดของแต่ละช่วง x ให้เหลือ 100 จุด (ค่ามาก = ราคาสูง)
+  const pts = [...stroke].sort((a, b) => a[0] - b[0]);
+  if (pts.length < 2 || pts[pts.length - 1][0] - pts[0][0] < pad.width * 0.3) return [];
+  const x0 = pts[0][0], x1 = pts[pts.length - 1][0], out = [];
+  let j = 0;
+  for (let k = 0; k < 100; k++) {
+    const xt = x0 + (x1 - x0) * k / 99;
+    while (j < pts.length - 2 && pts[j + 1][0] < xt) j++;
+    const [ax, ay] = pts[j], [bx, by] = pts[j + 1], t = bx === ax ? 0 : (xt - ax) / (bx - ax);
+    out.push(pad.height - (ay + (by - ay) * Math.min(1, Math.max(0, t))));
+  }
+  return out;
+}
+$("sk-clear").onclick = () => { stroke = []; drawPad(); };
+$("sk-preset").onclick = () => {
+  const W = pad.width, H = pad.height; stroke = [];
+  for (let i = 0; i <= 200; i++) {
+    const t = i / 200; let yv;
+    if (t < 0.45) yv = 0.12 + 0.68 * (t / 0.45) + 0.04 * Math.sin(t * 40);
+    else yv = 0.80 - 0.10 * ((t - 0.45) / 0.55) + 0.06 * Math.sin((t - 0.45) * 30) * (1 - (t - 0.45));
+    stroke.push([20 + t * (W - 40), yv * H]);
+  }
+  drawPad();
+};
+$("sk-len").oninput = (e) => $("sk-len-v").textContent = e.target.value + " วัน";
+$("sk-run").onclick = (e) => busy(e.target, "กำลังเทียบกับทุกหุ้น…", async () => {
+  const points = sketchPoints();
+  if (!points.length) throw new Error("วาดเส้นจากซ้ายไปขวาให้ยาวอย่างน้อย 1 ใน 3 ของกรอบก่อน");
+  const r = await api("/api/sketch", { points, length: +$("sk-len").value });
+  current = r; showResults(r, "ทรงที่วาด");
+  $("sk-save-row").classList.remove("hidden");
+});
+$("sk-save").onclick = (e) => busy(e.target, "กำลังบันทึก…", async () => {
+  const name = $("sk-name").value.trim(); if (!name) throw new Error("ตั้งชื่อ set-up ก่อน");
+  const r = await api("/api/save_sketch", { name, title: name, points: sketchPoints(), length: +$("sk-len").value });
+  await loadState(); msg(`บันทึกแล้ว → ${r.saved} · เปิดได้ในแท็บ "set-up ที่บันทึกไว้" และกด ✓/✗ ที่ผลด้านล่างเพื่อสอนต่อได้`);
+  current = await api("/api/run", { setup: r.name }); showResults(current);
+});
+
+/* ---------- เลือกจากกราฟจริง ---------- */
+let pk = null, sel = null;
+function parseTicker(v) {
+  const [t, m] = v.split("·").map((x) => x.trim());
+  if (m) return { ticker: t, market: m };
+  const hit = STATE.tickers.find((x) => x.split("|")[0] === t.toUpperCase());
+  if (!hit) throw new Error(`ไม่มี ${t} ในรายชื่อหุ้นที่ดึงราคามาแล้ว`);
+  return { ticker: hit.split("|")[0], market: hit.split("|")[1] };
+}
+function renderPick() {
+  $("pk-chart").innerHTML = chart(pk.chart, { h: 340, sel });
+  const svg = $("pk-chart").querySelector("svg");
+  const idxAt = (e) => { const r = svg.getBoundingClientRect(), n = +svg.dataset.n, W = +svg.dataset.w;
+    const xv = (e.clientX - r.left) * W / r.width; return Math.max(0, Math.min(n - 1, Math.floor((xv - +svg.dataset.l) / ((W - +svg.dataset.l - +svg.dataset.r) / n)))); };
+  let a = null;
+  svg.onpointerdown = (e) => { a = idxAt(e); sel = [a, a]; svg.setPointerCapture(e.pointerId); };
+  svg.onpointermove = (e) => { if (a == null) return; const b = idxAt(e); sel = [Math.min(a, b), Math.max(a, b)]; quickSel(svg); };
+  svg.onpointerup = () => { a = null; renderPick(); fillDates(); };
+}
+function quickSel(svg) {  // อัปเดตแถบเลือกโดยไม่วาดกราฟใหม่ทั้งหมดระหว่างลาก
+  let r = svg.querySelector("rect.live");
+  if (!r) { r = document.createElementNS("http://www.w3.org/2000/svg", "rect"); r.setAttribute("class", "live"); r.setAttribute("fill", "var(--sel)"); r.setAttribute("y", 0); r.setAttribute("height", 400); svg.prepend(r); }
+  const n = +svg.dataset.n, W = +svg.dataset.w, l = +svg.dataset.l, bw = (W - l - +svg.dataset.r) / n;
+  r.setAttribute("x", l + sel[0] * bw); r.setAttribute("width", (sel[1] - sel[0] + 1) * bw);
+  fillDates();
+}
+function fillDates() {
+  if (!sel || !pk) return;
+  const d = pk.chart.d; $("pk-start").value = d[sel[0]];
+  if (sel[1] + 1 < d.length) $("pk-entry").value = d[sel[1] + 1];
+  else { const t = new Date(d[sel[1]] + "T00:00:00Z"); t.setUTCDate(t.getUTCDate() + 1); $("pk-entry").value = t.toISOString().slice(0, 10); }
+}
+$("pk-load").onclick = (e) => busy(e.target, "กำลังโหลด…", async () => {
+  const q = parseTicker($("pk-ticker").value);
+  pk = await api(`/api/chart?ticker=${encodeURIComponent(q.ticker)}&market=${q.market}`); sel = null;
+  $("pk-name").textContent = `${pk.ticker} · ${pk.market} · ${pk.name || ""} — ลากบนกราฟเพื่อเลือกช่วงฐาน`;
+  renderPick();
+});
+$("pk-add").onclick = (e) => busy(e.target, "กำลังเพิ่มและวิเคราะห์…", async () => {
+  if (!pk) throw new Error("โหลดกราฟหุ้นก่อน");
+  if (!$("pk-start").value || !$("pk-entry").value) throw new Error("ลากเลือกช่วงฐานบนกราฟก่อน");
+  if (!$("pk-setup").value.trim()) throw new Error("ตั้งชื่อ set-up ที่ตัวอย่างนี้เป็นของ");
+  current = await api("/api/example", { setup: $("pk-setup").value.trim(), ticker: pk.ticker, market: pk.market,
+    base_start: $("pk-start").value, entry_date: $("pk-entry").value, label: $("pk-label").value });
+  await loadState(); showResults(current);
+});
+
+/* ---------- อัปโหลดรูป ---------- */
+let upImage = "";
+const drop = $("drop");
+drop.onclick = () => $("file").click();
+drop.ondragover = (e) => { e.preventDefault(); drop.classList.add("over"); };
+drop.ondragleave = () => drop.classList.remove("over");
+drop.ondrop = (e) => { e.preventDefault(); drop.classList.remove("over"); if (e.dataTransfer.files[0]) uploadFile(e.dataTransfer.files[0]); };
+$("file").onchange = (e) => e.target.files[0] && uploadFile(e.target.files[0]);
+document.addEventListener("paste", (e) => { const f = [...(e.clipboardData?.files || [])][0]; if (f && !$("tab-upload").classList.contains("hidden")) uploadFile(f); });
+function uploadFile(f) {
+  const rd = new FileReader();
+  rd.onload = async () => {
+    try { const r = await api("/api/upload", { filename: f.name, data: rd.result }); upImage = r.image;
+      $("preview").src = rd.result; $("preview").classList.remove("hidden"); msg(`เก็บรูปแล้ว → ${r.image}`); } catch (e) { msg(e.message, true); }
+  };
+  rd.readAsDataURL(f);
+}
+$("up-add").onclick = (e) => busy(e.target, "กำลังเพิ่มและวิเคราะห์…", async () => {
+  const q = parseTicker($("up-ticker").value);
+  if (!$("up-start").value || !$("up-entry").value) throw new Error("กรอกวันที่ฐานเริ่มและวันเข้าซื้อตามที่เห็นในรูป");
+  if (!$("up-setup").value.trim()) throw new Error("ตั้งชื่อ set-up ที่ตัวอย่างนี้เป็นของ");
+  current = await api("/api/example", { setup: $("up-setup").value.trim(), ...q, base_start: $("up-start").value,
+    entry_date: $("up-entry").value, label: $("up-label").value, image: upImage });
+  await loadState(); showResults(current);
+});
+
+/* ---------- set-up ที่บันทึกไว้ ---------- */
+$("sv-run").onclick = (e) => busy(e.target, "กำลังสแกน…", async () => { current = await api("/api/run", { setup: $("sv-setup").value }); showResults(current); });
+
+/* ---------- ผลลัพธ์ ---------- */
+function showResults(r, title) {
+  const s = r.setup, real = s.name !== "_sketch";
+  const info = STATE.setups.find((x) => x.name === s.name) || { good: 0, bad: 0 };
+  $("ctx").classList.toggle("hidden", !real);
+  if (real) {
+    $("ctx-title").textContent = `set-up: ${s.title || s.name}`;
+    $("ctx-desc").textContent = `${s.description || ""} · ตัวอย่าง good ${info.good} · bad ${info.bad}`;
+    $("ctx-conds").innerHTML = (s.conditions || []).map((c) => `<li>${c.text}</li>`).join("") || (s.type === "builtin" ? `<li>คะแนนทรงตั้งต้น ≥ ${s.min_score}</li>` : "");
+    $("learn").disabled = info.good < 3;
+    $("learn-hint").textContent = info.good < 3 ? `ต้องมีตัวอย่าง good อย่างน้อย 3 (ตอนนี้ ${info.good}) · กด ✓ ที่ผลด้านล่างเพื่อเพิ่มได้` : "สรุปจุดร่วมของตัวอย่างเป็นเงื่อนไขที่อ่านได้";
+    $("ctx-examples").innerHTML = r.examples.map((e) => `<div class="res ${e.label}"><div class="top"><b>${e.ticker}</b><span class="tag">${e.label === "good" ? "ตัวอย่าง: ใช่" : "ตัวอย่าง: ไม่ใช่"} · ${e.signal_date}</span></div>${chart(e.chart, { h: 140, w: 400, markIdx: e.chart.d.indexOf(e.signal_date) })}</div>`).join("");
+  }
+  $("out").classList.remove("hidden");
+  $("out-title").textContent = `หุ้นที่ทรงคล้าย · ${title || s.title || s.name} · วันที่ ${STATE.scan_date}`;
+  renderResults();
+  $("out").scrollIntoView({ behavior: "smooth", block: "start" });
+}
+function renderResults() {
+  const r = current; if (!r) return;
+  const real = r.setup.name !== "_sketch";
+  const rows = r.signals.filter((x) => market === "ALL" || x.market === market)
+    .sort((a, b) => (b.passed - a.passed) || ((b.similarity ?? b.score) - (a.similarity ?? a.score)));
+  $("out-desc").textContent = rows.length ? (real ? "กด ✓ ใช่ / ✗ ไม่ใช่ เพื่อเพิ่มเป็นตัวอย่างของ set-up นี้ ระบบจะเรียนจากป้ายเหล่านี้" : "บันทึกเป็น set-up ก่อน จึงจะกด ✓/✗ สอนระบบต่อได้") : "ไม่เจอหุ้นที่ผ่านเกณฑ์สภาพคล่องในตลาดนี้";
+  $("results").innerHTML = rows.map((x, i) => {
+    const bsi = x.chart.d.indexOf(x.base_start);
+    return `<div class="res" data-i="${i}">
+      <div class="top"><span><b>${x.ticker}</b> <span class="tag">${x.market}</span> ${x.passed ? '<span class="tag pass">ผ่านสูตร</span>' : ""}</span>
+      <span class="sim" title="ความเหมือน 0–100">${x.similarity != null ? x.similarity.toFixed(0) : x.score.toFixed(0)}</span></div>
+      ${chart(x.chart, { h: 150, w: 400, baseLow: x.base_low, baseTop: x.base_top, baseStartIdx: bsi >= 0 ? bsi : null })}
+      <div class="sub">ราคา ${x.close} · stop ${x.stop} (เสี่ยง ${(x.risk_pct * 100).toFixed(1)}%) ${x.best_example ? "· คล้าย " + x.best_example : ""}</div>
+      ${real ? `<div class="acts"><button data-l="good">✓ ใช่</button><button data-l="bad">✗ ไม่ใช่</button></div>` : ""}
+    </div>`;
+  }).join("");
+  document.querySelectorAll("#results .acts button").forEach((b) => b.onclick = () => {
+    const card = b.closest(".res"), x = rows[+card.dataset.i];
+    busy(b, "…", async () => {
+      const t = new Date(x.date + "T00:00:00Z"); t.setUTCDate(t.getUTCDate() + 1);
+      await api("/api/example", { setup: r.setup.name, ticker: x.ticker, market: x.market, base_start: x.base_start,
+        entry_date: t.toISOString().slice(0, 10), label: b.dataset.l, note: `app ${STATE.scan_date}` });
+      card.classList.add(b.dataset.l); await loadState();
+      const info = STATE.setups.find((s) => s.name === r.setup.name);
+      $("learn").disabled = info.good < 3;
+      $("ctx-desc").textContent = `${r.setup.description || ""} · ตัวอย่าง good ${info.good} · bad ${info.bad}`;
+      msg(`บันทึก ${x.ticker} เป็น ${b.dataset.l === "good" ? "ใช่" : "ไม่ใช่"} แล้ว`);
+    });
+  });
+}
+document.querySelectorAll(".mk").forEach((b) => b.onclick = () => { market = b.dataset.m; document.querySelectorAll(".mk").forEach((x) => x.classList.toggle("on", x === b)); renderResults(); });
+$("learn").onclick = (e) => busy(e.target, "กำลังหาจุดร่วม…", async () => {
+  const r = await api("/api/learn", { setup: current.setup.name, title: current.setup.title });
+  current = r; await loadState(); showResults(r);
+  msg(`ได้สูตรแล้ว: หุ้นทั่วไปผ่านเพียง ${(r.setup.stats.baseline_pass * 100).toFixed(2)}% · ตัวอย่าง good ผ่าน ${(r.setup.stats.good_pass * 100).toFixed(0)}% · รายงานอยู่ที่ output/rule_report_${r.setup.name}.md`);
+});
+
+document.querySelectorAll(".tabs button").forEach((b) => b.onclick = () => {
+  document.querySelectorAll(".tabs button").forEach((x) => x.classList.toggle("on", x === b));
+  ["sketch", "pick", "upload", "saved"].forEach((t) => $("tab-" + t).classList.toggle("hidden", t !== b.dataset.tab));
+});
+
+async function loadState() {
+  STATE = await api("/api/state");
+  $("meta").textContent = `ข้อมูลถึงวันที่ ${STATE.scan_date} · ${STATE.tickers.length} หุ้น · ดึงราคา ${STATE.retrieved}`;
+  $("tickers").innerHTML = STATE.tickers.map((t) => `<option value="${t.replace("|", " · ")}">`).join("");
+  const names = STATE.setups.filter((s) => s.type !== "builtin");
+  $("setup-names").innerHTML = names.map((s) => `<option value="${s.name}">${s.title}</option>`).join("");
+  const keep = $("sv-setup").value;
+  $("sv-setup").innerHTML = STATE.setups.map((s) => `<option value="${s.name}">${s.title} (${s.type === "rule" ? "สูตร" : s.type === "sketch" ? "ทรงวาด" : s.type === "builtin" ? "ตั้งต้น" : "ตัวอย่าง"} · good ${s.good})</option>`).join("");
+  if (keep) $("sv-setup").value = keep;
+}
+drawPad();
+loadState().catch((e) => msg("ต่อเซิร์ฟเวอร์ไม่ได้: รัน python src/app.py ก่อน (" + e.message + ")", true));
+</script>
+</body>
+</html>
