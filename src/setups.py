@@ -17,7 +17,7 @@ from detector import FEATURES, builtin_score, feature_value_text
 
 DEFAULT_SETUP = {
     "name": "base-after-downtrend",
-    "title": "สะสมโซนล่างหลังขาลง (ตั้งต้น)",
+    "title": "หุ้นต้นรอบ",
     "type": "builtin",
     "min_score": 65,
     "description": "นิยามตั้งต้นที่สร้างจากความหมายของทรง: ลงมาแรงและนาน อยู่โซนล่าง หยุดทำ low ใหม่ "

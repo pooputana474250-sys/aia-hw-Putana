@@ -20,7 +20,7 @@ from datetime import datetime
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from urllib.parse import parse_qs, urlparse
 
-from common import EXAMPLES_DIR, ROOT, SETUPS_DIR, load_examples, price_meta, to_symbol
+from common import EXAMPLES_DIR, PRICE_META, ROOT, SETUPS_DIR, load_examples, price_meta, to_symbol
 from examples import add as add_example
 from market import load_market
 from scan import bars, latest_date, prepare, scan_setup
@@ -30,9 +30,22 @@ HOST, PORT = "127.0.0.1", 8770
 INBOX = EXAMPLES_DIR / "inbox"
 CHART_DAYS = 750
 
-STOCKS = load_market()
-SCAN_DATE = latest_date(STOCKS)
-END_IDX, TODAY, SCALE = prepare(STOCKS, SCAN_DATE)
+STOCKS: dict = {}
+SCAN_DATE = END_IDX = TODAY = SCALE = None
+LOADED_AT = -1.0
+
+
+def refresh_if_stale() -> None:
+    """โหลดราคาใหม่เมื่อ fetch_prices (เช่นงานสแกน 08:00) อัปเดตข้อมูล ไม่ต้องปิดเปิดหน้าเว็บ"""
+    global STOCKS, SCAN_DATE, END_IDX, TODAY, SCALE, LOADED_AT
+    stamp = PRICE_META.stat().st_mtime if PRICE_META.exists() else 0.0
+    if stamp == LOADED_AT:
+        return
+    STOCKS = load_market()
+    SCAN_DATE = latest_date(STOCKS)
+    END_IDX, TODAY, SCALE = prepare(STOCKS, SCAN_DATE)
+    LOADED_AT = stamp
+    print(f"  โหลดราคาใหม่ (ข้อมูลถึง {SCAN_DATE.date()})")
 
 
 def slug(text: str) -> str:
@@ -154,6 +167,7 @@ class Handler(BaseHTTPRequestHandler):
         if fn is None:
             return self._json(404, {"error": "ไม่มีหน้านี้"})
         try:
+            refresh_if_stale()
             self._json(200, fn(q))
         except (ValueError, KeyError) as e:
             self._json(400, {"error": str(e)})
@@ -174,5 +188,6 @@ class Handler(BaseHTTPRequestHandler):
 
 
 if __name__ == "__main__":
+    refresh_if_stale()
     print(f"เปิด http://{HOST}:{PORT}  (วันสแกน {SCAN_DATE.date()} · กด Ctrl+C เพื่อปิด)")
     HTTPServer((HOST, PORT), Handler).serve_forever()

@@ -16,6 +16,7 @@ setsmart/
 
 # Price cache from Yahoo Finance: large and re-downloadable with src/fetch_prices.py
 data/prices/
+output/daily.log
 examples/inbox/*.tmp
 
 # System and tool clutter
