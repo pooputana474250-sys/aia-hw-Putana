@@ -64,6 +64,13 @@ ul.conds { margin: 6px 0; padding-left: 18px; font-size: 14px; }
 svg text { fill: var(--muted); font: 10px "IBM Plex Mono", monospace; }
 .hidden { display: none; }
 footer { max-width: 1200px; margin: 0 auto; padding: 8px 16px 32px; color: var(--muted); font-size: 12px; }
+.modal { position: fixed; inset: 0; background: #000a; display: none; align-items: center; justify-content: center; z-index: 50; padding: 16px; }
+.modal.show { display: flex; }
+.modal .box { background: var(--panel); border-radius: 12px; width: min(1200px, 100%); height: min(800px, 92vh); display: flex; flex-direction: column; overflow: hidden; }
+.modal .mbar { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 8px 12px; border-bottom: 1px solid var(--line); }
+.modal .mbar a { color: var(--accent); font-size: 14px; margin-right: 8px; }
+#tvchart { flex: 1; min-height: 0; }
+.zoomable svg { cursor: zoom-in; }
 </style>
 </head>
 <body>
@@ -87,7 +94,7 @@ footer { max-width: 1200px; margin: 0 auto; padding: 8px 16px 32px; color: var(-
       <button id="sk-clear">ล้าง</button>
       <button id="sk-preset">ใส่ทรงตัวอย่าง: หุ้นต้นรอบ</button>
       <label for="sk-len">ทรงนี้ยาวประมาณ</label>
-      <input type="range" id="sk-len" min="40" max="250" value="120" step="5">
+      <input type="range" id="sk-len" min="40" max="1000" value="120" step="10">
       <span class="num" id="sk-len-v">120 วัน</span>
       <button class="primary" id="sk-run">วิเคราะห์</button>
     </div>
@@ -103,7 +110,9 @@ footer { max-width: 1200px; margin: 0 auto; padding: 8px 16px 32px; color: var(-
     <p class="desc">พิมพ์ชื่อหุ้น แล้วลากบนกราฟจากจุดที่ฐานเริ่ม (ขาลงจบ) ไปถึงวันก่อนเข้าซื้อ ระบบจะใช้ขาลงก่อนหน้าประกอบด้วย</p>
     <div class="row">
       <input id="pk-ticker" list="tickers" placeholder="ชื่อหุ้น เช่น PTT หรือ AAPL" style="min-width:220px">
+      <select id="pk-days" aria-label="ช่วงกราฟ"><option value="250">1 ปี</option><option value="500" selected>2 ปี</option><option value="1250">5 ปี (รายสัปดาห์)</option><option value="2520">10 ปี (รายสัปดาห์)</option></select>
       <button id="pk-load">โหลดกราฟ</button>
+      <button id="pk-tv">🔍 ภาพใหญ่ใน TradingView</button>
       <span class="sub" id="pk-name"></span>
     </div>
     <div id="pk-chart"></div>
@@ -160,7 +169,7 @@ footer { max-width: 1200px; margin: 0 auto; padding: 8px 16px 32px; color: var(-
   <section class="card hidden" id="out">
     <div class="row" style="justify-content:space-between">
       <h2 id="out-title">ผลการวิเคราะห์</h2>
-      <div><button data-m="ALL" class="mk on">ทั้งหมด</button> <button data-m="SET" class="mk">หุ้นไทย</button> <button data-m="US" class="mk">หุ้นสหรัฐ</button></div>
+      <div><button id="tv-export" title="ไฟล์ .txt สำหรับเมนู Import list ของ watchlist ใน TradingView">⬇ ส่งออก watchlist TradingView</button><button data-m="ALL" class="mk on">ทั้งหมด</button> <button data-m="SET" class="mk">หุ้นไทย</button> <button data-m="US" class="mk">หุ้นสหรัฐ</button></div>
     </div>
     <p class="desc" id="out-desc"></p>
     <div class="results" id="results"></div>
@@ -168,9 +177,68 @@ footer { max-width: 1200px; margin: 0 auto; padding: 8px 16px 32px; color: var(-
 </main>
 <datalist id="tickers"></datalist>
 <datalist id="setup-names"></datalist>
+<div class="modal" id="tvmodal" role="dialog" aria-modal="true" aria-labelledby="tv-title">
+  <div class="box">
+    <div class="mbar"><b id="tv-title"></b><span><a id="tv-link" target="_blank" rel="noopener">เปิดใน TradingView ↗</a><button id="tv-close">ปิด</button></span></div>
+    <div id="tvchart"></div>
+  </div>
+</div>
 <footer>คัดกรองหุ้นตามทรงที่ผู้ใช้กำหนดเท่านั้น ไม่ใช่คำแนะนำการลงทุน · ราคาจาก Yahoo Finance ผ่าน yfinance</footer>
 <script>
 const $ = (id) => document.getElementById(id);
+
+/* ---------- กราฟใหญ่จาก TradingView + ส่งออก watchlist ---------- */
+let tvScript = null;
+function loadTV() {
+  return tvScript ||= new Promise((ok, fail) => {
+    const s = document.createElement("script"); s.src = "https://s3.tradingview.com/tv.js";
+    s.onload = ok; s.onerror = () => { tvScript = null; fail(new Error("โหลดกราฟ TradingView ไม่ได้ ตรวจการเชื่อมต่ออินเทอร์เน็ต")); };
+    document.head.appendChild(s);
+  });
+}
+async function openTV(symbol, title, days, ownBars) {
+  $("tvmodal").classList.add("show");
+  $("tv-title").textContent = title || symbol;
+  const url = "https://www.tradingview.com/chart/?symbol=" + encodeURIComponent(symbol);
+  $("tv-link").href = url;
+  $("tvchart").innerHTML = "";
+  if (symbol.startsWith("SET:")) {
+    // TradingView ไม่อนุญาตให้ฝังกราฟหุ้นไทยในเว็บอื่น ("สัญลักษณ์นี้มีเฉพาะใน TradingView") จึงวาดจากข้อมูลของระบบแทน
+    const b = typeof ownBars === "function" ? await ownBars() : ownBars;
+    $("tvchart").innerHTML = `<div style="padding:12px 16px;overflow:auto;height:100%">
+      <p class="desc">TradingView ไม่อนุญาตให้ฝังกราฟหุ้นไทยในหน้าเว็บอื่น จึงแสดงกราฟจากข้อมูลของระบบ (Yahoo Finance) แทน ·
+      <a href="${url}" target="_blank" rel="noopener" style="color:var(--accent)">เปิด ${symbol} ในเว็บ TradingView ↗</a></p>
+      ${b ? chart(b, { w: 1100, h: 540 }) : '<p class="empty">ไม่มีข้อมูลกราฟ</p>'}</div>`;
+    return;
+  }
+  try {
+    await loadTV();
+    const dark = document.documentElement.dataset.theme === "dark" || (!document.documentElement.dataset.theme && matchMedia("(prefers-color-scheme: dark)").matches);
+    new TradingView.widget({ container_id: "tvchart", autosize: true, symbol, interval: (days || 0) > 400 ? "W" : "D",
+      range: (days || 0) > 400 ? "60M" : "12M", timezone: "Asia/Bangkok", theme: dark ? "dark" : "light", style: "1",
+      locale: "th_TH", allow_symbol_change: true, withdateranges: true, studies: ["Volume@tv-basicstudies"] });
+  } catch (e) { $("tvchart").innerHTML = `<p class="empty">${e.message}</p>`; }
+}
+function closeTV() { $("tvmodal").classList.remove("show"); $("tvchart").innerHTML = ""; }
+$("tv-close").onclick = closeTV;
+$("tvmodal").onclick = (e) => { if (e.target.id === "tvmodal") closeTV(); };
+document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeTV(); });
+
+function exportWatchlist(title, rows, date) {
+  // รูปแบบไฟล์นำเข้าของ TradingView: ชื่อหุ้นคั่นด้วยจุลภาค และ ###ชื่อหัวข้อ เพื่อแบ่งกลุ่ม
+  if (!rows.length) { alert("ไม่มีหุ้นในรายการ"); return; }
+  const parts = [];
+  for (const [mk, label] of [["SET", "หุ้นไทย"], ["US", "หุ้นสหรัฐ"]]) {
+    const syms = [...new Set(rows.filter((r) => r.market === mk).map((r) => r.tv || r.ticker))];
+    if (syms.length) parts.push(`###${title} ${label}`, ...syms);
+  }
+  const blob = new Blob([parts.join(",")], { type: "text/plain" });
+  const a = document.createElement("a"); a.href = URL.createObjectURL(blob);
+  a.download = `tradingview_${title.replace(/[^\p{L}\p{M}\p{N}]+/gu, "-")}_${date}.txt`; a.click();
+}
+function idxOn(dates, day) {  // ตำแหน่งแท่งแรกที่วันที่ ≥ day (รองรับกราฟรายสัปดาห์)
+  const i = dates.findIndex((d) => d >= day); return i < 0 ? null : i;
+}
 let STATE = null, current = null, market = "ALL";
 
 async function api(path, body) {
@@ -293,13 +361,13 @@ function quickSel(svg) {  // อัปเดตแถบเลือกโดย
 }
 function fillDates() {
   if (!sel || !pk) return;
+  // วันเข้า = วันถัดจากแท่งสุดท้ายที่เลือก (ใช้ได้ทั้งกราฟรายวันและรายสัปดาห์)
   const d = pk.chart.d; $("pk-start").value = d[sel[0]];
-  if (sel[1] + 1 < d.length) $("pk-entry").value = d[sel[1] + 1];
-  else { const t = new Date(d[sel[1]] + "T00:00:00Z"); t.setUTCDate(t.getUTCDate() + 1); $("pk-entry").value = t.toISOString().slice(0, 10); }
+  const t = new Date(d[sel[1]] + "T00:00:00Z"); t.setUTCDate(t.getUTCDate() + 1); $("pk-entry").value = t.toISOString().slice(0, 10);
 }
 $("pk-load").onclick = (e) => busy(e.target, "กำลังโหลด…", async () => {
   const q = parseTicker($("pk-ticker").value);
-  pk = await api(`/api/chart?ticker=${encodeURIComponent(q.ticker)}&market=${q.market}`); sel = null;
+  pk = await api(`/api/chart?ticker=${encodeURIComponent(q.ticker)}&market=${q.market}&days=${$("pk-days").value}`); sel = null;
   $("pk-name").textContent = `${pk.ticker} · ${pk.market} · ${pk.name || ""} — ลากบนกราฟเพื่อเลือกช่วงฐาน`;
   renderPick();
 });
@@ -311,6 +379,8 @@ $("pk-add").onclick = (e) => busy(e.target, "กำลังเพิ่มแ�
     base_start: $("pk-start").value, entry_date: $("pk-entry").value, label: $("pk-label").value });
   await loadState(); showResults(current);
 });
+
+$("pk-tv").onclick = () => pk ? openTV(pk.tv, `${pk.ticker} · ${pk.name || pk.market}`, +$("pk-days").value, pk.chart) : msg("โหลดกราฟหุ้นก่อน", true);
 
 /* ---------- อัปโหลดรูป ---------- */
 let upImage = "";
@@ -352,7 +422,7 @@ function showResults(r, title) {
     $("ctx-conds").innerHTML = (s.conditions || []).map((c) => `<li>${c.text}</li>`).join("") || (s.type === "builtin" ? `<li>คะแนนทรงตั้งต้น ≥ ${s.min_score}</li>` : "");
     $("learn").disabled = info.good < 3;
     $("learn-hint").textContent = info.good < 3 ? `ต้องมีตัวอย่าง good อย่างน้อย 3 (ตอนนี้ ${info.good}) · กด ✓ ที่ผลด้านล่างเพื่อเพิ่มได้` : "สรุปจุดร่วมของตัวอย่างเป็นเงื่อนไขที่อ่านได้";
-    $("ctx-examples").innerHTML = r.examples.map((e) => `<div class="res ${e.label}"><div class="top"><b>${e.ticker}</b><span class="tag">${e.label === "good" ? "ตัวอย่าง: ใช่" : "ตัวอย่าง: ไม่ใช่"} · ${e.signal_date}</span></div>${chart(e.chart, { h: 140, w: 400, markIdx: e.chart.d.indexOf(e.signal_date) })}</div>`).join("");
+    $("ctx-examples").innerHTML = r.examples.map((e) => `<div class="res ${e.label}"><div class="top"><b>${e.ticker}</b><span class="tag">${e.label === "good" ? "ตัวอย่าง: ใช่" : "ตัวอย่าง: ไม่ใช่"} · ${e.signal_date}</span></div>${chart(e.chart, { h: 140, w: 400, markIdx: idxOn(e.chart.d, e.signal_date) })}</div>`).join("");
   }
   $("out").classList.remove("hidden");
   $("out-title").textContent = `หุ้นที่ทรงคล้าย · ${title || s.title || s.name} · วันที่ ${STATE.scan_date}`;
@@ -366,8 +436,8 @@ function renderResults() {
     .sort((a, b) => (b.passed - a.passed) || ((b.similarity ?? b.score) - (a.similarity ?? a.score)));
   $("out-desc").textContent = rows.length ? (real ? "กด ✓ ใช่ / ✗ ไม่ใช่ เพื่อเพิ่มเป็นตัวอย่างของ set-up นี้ ระบบจะเรียนจากป้ายเหล่านี้" : "บันทึกเป็น set-up ก่อน จึงจะกด ✓/✗ สอนระบบต่อได้") : "ไม่เจอหุ้นที่ผ่านเกณฑ์สภาพคล่องในตลาดนี้";
   $("results").innerHTML = rows.map((x, i) => {
-    const bsi = x.chart.d.indexOf(x.base_start);
-    return `<div class="res" data-i="${i}">
+    const bsi = idxOn(x.chart.d, x.base_start);
+    return `<div class="res zoomable" data-i="${i}">
       <div class="top"><span><b>${x.ticker}</b> <span class="tag">${x.market}</span> ${x.passed ? '<span class="tag pass">ผ่านสูตร</span>' : ""}</span>
       <span class="sim" title="ความเหมือน 0–100">${x.similarity != null ? x.similarity.toFixed(0) : x.score.toFixed(0)}</span></div>
       ${chart(x.chart, { h: 150, w: 400, baseLow: x.base_low, baseTop: x.base_top, baseStartIdx: bsi >= 0 ? bsi : null })}
@@ -375,6 +445,12 @@ function renderResults() {
       ${real ? `<div class="acts"><button data-l="good">✓ ใช่</button><button data-l="bad">✗ ไม่ใช่</button></div>` : ""}
     </div>`;
   }).join("");
+  document.querySelectorAll("#results .res svg").forEach((svg) => svg.onclick = () => {
+    const x = rows[+svg.closest(".res").dataset.i];
+    openTV(x.tv, `${x.ticker} · ${x.name || x.market}`, x.window,
+      async () => (await api(`/api/chart?ticker=${encodeURIComponent(x.ticker)}&market=${x.market}&days=${Math.max(500, (x.window || 0) + 60)}`)).chart);
+  });
+  $("tv-export").onclick = () => exportWatchlist(r.setup.title || "ทรงที่วาด", rows, STATE.scan_date);
   document.querySelectorAll("#results .acts button").forEach((b) => b.onclick = () => {
     const card = b.closest(".res"), x = rows[+card.dataset.i];
     busy(b, "…", async () => {

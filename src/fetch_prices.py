@@ -1,4 +1,4 @@
-"""ดึงราคารายวัน (ปรับ split/ปันผลแล้ว) จาก Yahoo Finance → data/prices/<symbol>.csv
+"""ดึงราคารายวัน 10 ปี (ปรับ split/ปันผลแล้ว) จาก Yahoo Finance → data/prices/<symbol>.csv
 
 ใช้:  python src/fetch_prices.py               ดึงทุกหุ้นใน universe
       python src/fetch_prices.py --market SET  ดึงเฉพาะตลาดเดียว
@@ -37,7 +37,7 @@ def save_batch(symbols: list[str], period: str) -> list[str]:
     return saved
 
 
-def fetch(symbols: list[str], period: str = "5y") -> None:
+def fetch(symbols: list[str], period: str = "10y") -> None:
     PRICES_DIR.mkdir(parents=True, exist_ok=True)
     meta = price_meta()
     stamp = datetime.now().isoformat(timespec="minutes")
@@ -45,6 +45,9 @@ def fetch(symbols: list[str], period: str = "5y") -> None:
     for i in range(0, len(symbols), BATCH):
         batch = symbols[i:i + BATCH]
         saved = save_batch(batch, period)
+        failed = [s for s in batch if s not in saved]
+        if failed:   # Yahoo ตอบพลาดเป็นช่วง ๆ ลองซ้ำอีกครั้งก่อนนับว่าดึงไม่ได้
+            saved += save_batch(failed, period)
         missing += [s for s in batch if s not in saved]
         for s in saved:
             meta[s] = {"retrieved": stamp, "source": "Yahoo Finance via yfinance (auto_adjust=True)"}
@@ -59,7 +62,7 @@ def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--market", choices=["SET", "US"])
     ap.add_argument("--tickers", nargs="*")
-    ap.add_argument("--period", default="5y")
+    ap.add_argument("--period", default="10y")   # 10 ปี รองรับทรงยาว 1,000 วัน
     a = ap.parse_args()
     symbols = a.tickers or load_universe([a.market] if a.market else None)["symbol"].tolist()
     fetch(symbols, a.period)

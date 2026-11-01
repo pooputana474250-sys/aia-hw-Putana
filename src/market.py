@@ -16,6 +16,7 @@ class Stock:
     ticker: str
     market: str
     name: str
+    tv: str
     prices: pd.DataFrame
     features: pd.DataFrame
 
@@ -23,7 +24,9 @@ class Stock:
 def load_market(markets: list[str] | None = None) -> dict[str, Stock]:
     out = {}
     for symbol, (row, df) in load_all_prices(markets).items():
-        out[symbol] = Stock(symbol, row["ticker"], row["market"], row.get("name", "") or "",
+        tv = row.get("tv_symbol") if isinstance(row.get("tv_symbol"), str) else ""
+        tv = tv or (f"SET:{row['ticker']}" if row["market"] == "SET" else row["ticker"])
+        out[symbol] = Stock(symbol, row["ticker"], row["market"], row.get("name", "") or "", tv,
                             df, compute_features(df))
     print(f"โหลด {len(out)} หุ้น")
     return out

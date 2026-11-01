@@ -22,7 +22,13 @@ TOP_SIMILAR = 15
 CHART_BARS = 180
 
 
-def bars(df: pd.DataFrame) -> dict:
+def bars(df: pd.DataFrame, max_bars: int = 300) -> dict:
+    """ราคาสำหรับวาดกราฟ ถ้ายาวเกิน max_bars แท่ง รวมเป็นแท่งรายสัปดาห์ (วันที่ = วันทำการสุดท้ายของสัปดาห์)"""
+    if len(df) > max_bars:
+        g = df.assign(Date=df.index).groupby(df.index.to_period("W"))
+        df = pd.DataFrame({"Open": g["Open"].first(), "High": g["High"].max(), "Low": g["Low"].min(),
+                           "Close": g["Close"].last(), "Volume": g["Volume"].sum(), "Date": g["Date"].last()})
+        df = df.set_index("Date")
     return {"d": [d.strftime("%Y-%m-%d") for d in df.index],
             **{k[0].lower(): [round(float(x), 4) for x in df[k]] for k in ("Open", "High", "Low", "Close")},
             "v": [float(x) for x in df["Volume"]]}
@@ -58,6 +64,7 @@ def scan_setup(setup: dict, stocks: dict[str, Stock], end_idx: dict[str, int], t
         table["similarity"] = stacked.max(axis=1)
         best = stacked.to_numpy().argmax(axis=1)
         table["best_example"] = [goods[i].ticker for i in best]
+        table["window"] = [sims[i].loc[s, "window"] for s, i in zip(stacked.index, best)]
         for part in ("sim_shape", "sim_volume", "sim_features"):
             table[part] = [sims[i].loc[s, part] for s, i in zip(stacked.index, best)]
         if bads:
@@ -73,6 +80,7 @@ def scan_setup(setup: dict, stocks: dict[str, Stock], end_idx: dict[str, int], t
         table["sim_volume"] = float("nan")
         table["sim_features"] = float("nan")
         table["best_example"] = "ทรงที่วาด"
+        table["window"] = sk["window"]
     has_sim = "similarity" in table
     rank_col = "similarity" if has_sim else "score"
 
@@ -103,7 +111,10 @@ def scan_setup(setup: dict, stocks: dict[str, Stock], end_idx: dict[str, int], t
                 "base_start": s.prices.index[max(0, i - base_days)].strftime("%Y-%m-%d"),
                 "features": {k: feature_value_text(k, f[k]) for k in FEATURES},
                 "reasons": reasons(setup, f, parts.iloc[0]),
-                "chart": bars(s.prices.iloc[max(0, i + 1 - CHART_BARS):i + 1]),
+                "tv": s.tv,
+                "window": int(r["window"]) if has_sim and pd.notna(r.get("window")) else None,
+                # ทรงยาวให้เห็นทั้งช่วงที่จับคู่ได้ + ก่อนหน้าอีกนิด
+                "chart": bars(s.prices.iloc[max(0, i + 1 - max(CHART_BARS, int(r.get("window", 0) or 0) + 40)):i + 1]),
             })
     examples = [{"ticker": t.ticker, "label": t.label, "signal_date": t.signal_date.strftime("%Y-%m-%d"),
                  "chart": bars(t.chart)} for t in templates]

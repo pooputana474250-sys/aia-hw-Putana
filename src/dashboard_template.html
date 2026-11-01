@@ -70,6 +70,13 @@ tr.row:hover, tr.row.sel { background: var(--chip); }
 svg text { fill: var(--muted); font: 10px "IBM Plex Mono", monospace; }
 .empty { color: var(--muted); padding: 24px; text-align: center; }
 footer { color: var(--muted); font-size: 12px; max-width: 1280px; margin: 0 auto; padding: 0 16px 32px; }
+.modal { position: fixed; inset: 0; background: #000a; display: none; align-items: center; justify-content: center; z-index: 50; padding: 16px; }
+.modal.show { display: flex; }
+.modal .box { background: var(--panel); border-radius: 12px; width: min(1200px, 100%); height: min(800px, 92vh); display: flex; flex-direction: column; overflow: hidden; }
+.modal .mbar { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 8px 12px; border-bottom: 1px solid var(--line); }
+.modal .mbar a { color: var(--accent); font-size: 14px; margin-right: 8px; }
+#tvchart { flex: 1; min-height: 0; }
+.zoomable svg { cursor: zoom-in; }
 </style>
 </head>
 <body>
@@ -95,17 +102,76 @@ footer { color: var(--muted); font-size: 12px; max-width: 1280px; margin: 0 auto
     <div class="card">
       <h2 id="list-title">หุ้นที่มีสัญญาณ</h2>
       <div class="tablewrap"><table><thead><tr id="thead"></tr></thead><tbody id="rows"></tbody></table></div>
-      <div class="actions"><button id="export">ดาวน์โหลด feedback.csv</button><span class="desc" id="fb-count"></span></div>
+      <div class="actions"><button id="tv-export" title="ไฟล์ .txt สำหรับเมนู Import list ของ watchlist ใน TradingView">⬇ ส่งออก watchlist TradingView</button><button id="export">ดาวน์โหลด feedback.csv</button><span class="desc" id="fb-count"></span></div>
     </div>
-    <div class="card detail" id="detail"><div class="empty">กดที่หุ้นในตารางเพื่อดูกราฟ</div></div>
+    <div class="card detail zoomable" id="detail"><div class="empty">กดที่หุ้นในตารางเพื่อดูกราฟ</div></div>
   </div>
 </main>
+<div class="modal" id="tvmodal" role="dialog" aria-modal="true" aria-labelledby="tv-title">
+  <div class="box">
+    <div class="mbar"><b id="tv-title"></b><span><a id="tv-link" target="_blank" rel="noopener">เปิดใน TradingView ↗</a><button id="tv-close">ปิด</button></span></div>
+    <div id="tvchart"></div>
+  </div>
+</div>
 <footer>
   เครื่องมือนี้คัดกรองหุ้นตามกฎที่ผู้ใช้กำหนดเท่านั้น ไม่ใช่คำแนะนำการลงทุน · ผลทดสอบย้อนหลังไม่รับประกันผลในอนาคต
 </footer>
 <script>
 const DATA = __DATA__;
 const $ = (id) => document.getElementById(id);
+
+/* ---------- กราฟใหญ่จาก TradingView + ส่งออก watchlist ---------- */
+let tvScript = null;
+function loadTV() {
+  return tvScript ||= new Promise((ok, fail) => {
+    const s = document.createElement("script"); s.src = "https://s3.tradingview.com/tv.js";
+    s.onload = ok; s.onerror = () => { tvScript = null; fail(new Error("โหลดกราฟ TradingView ไม่ได้ ตรวจการเชื่อมต่ออินเทอร์เน็ต")); };
+    document.head.appendChild(s);
+  });
+}
+async function openTV(symbol, title, days, ownBars) {
+  $("tvmodal").classList.add("show");
+  $("tv-title").textContent = title || symbol;
+  const url = "https://www.tradingview.com/chart/?symbol=" + encodeURIComponent(symbol);
+  $("tv-link").href = url;
+  $("tvchart").innerHTML = "";
+  if (symbol.startsWith("SET:")) {
+    // TradingView ไม่อนุญาตให้ฝังกราฟหุ้นไทยในเว็บอื่น ("สัญลักษณ์นี้มีเฉพาะใน TradingView") จึงวาดจากข้อมูลของระบบแทน
+    const b = typeof ownBars === "function" ? await ownBars() : ownBars;
+    $("tvchart").innerHTML = `<div style="padding:12px 16px;overflow:auto;height:100%">
+      <p class="desc">TradingView ไม่อนุญาตให้ฝังกราฟหุ้นไทยในหน้าเว็บอื่น จึงแสดงกราฟจากข้อมูลของระบบ (Yahoo Finance) แทน ·
+      <a href="${url}" target="_blank" rel="noopener" style="color:var(--accent)">เปิด ${symbol} ในเว็บ TradingView ↗</a></p>
+      ${b ? chart(b, { w: 1100, h: 540 }) : '<p class="empty">ไม่มีข้อมูลกราฟ</p>'}</div>`;
+    return;
+  }
+  try {
+    await loadTV();
+    const dark = document.documentElement.dataset.theme === "dark" || (!document.documentElement.dataset.theme && matchMedia("(prefers-color-scheme: dark)").matches);
+    new TradingView.widget({ container_id: "tvchart", autosize: true, symbol, interval: (days || 0) > 400 ? "W" : "D",
+      range: (days || 0) > 400 ? "60M" : "12M", timezone: "Asia/Bangkok", theme: dark ? "dark" : "light", style: "1",
+      locale: "th_TH", allow_symbol_change: true, withdateranges: true, studies: ["Volume@tv-basicstudies"] });
+  } catch (e) { $("tvchart").innerHTML = `<p class="empty">${e.message}</p>`; }
+}
+function closeTV() { $("tvmodal").classList.remove("show"); $("tvchart").innerHTML = ""; }
+$("tv-close").onclick = closeTV;
+$("tvmodal").onclick = (e) => { if (e.target.id === "tvmodal") closeTV(); };
+document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeTV(); });
+
+function exportWatchlist(title, rows, date) {
+  // รูปแบบไฟล์นำเข้าของ TradingView: ชื่อหุ้นคั่นด้วยจุลภาค และ ###ชื่อหัวข้อ เพื่อแบ่งกลุ่ม
+  if (!rows.length) { alert("ไม่มีหุ้นในรายการ"); return; }
+  const parts = [];
+  for (const [mk, label] of [["SET", "หุ้นไทย"], ["US", "หุ้นสหรัฐ"]]) {
+    const syms = [...new Set(rows.filter((r) => r.market === mk).map((r) => r.tv || r.ticker))];
+    if (syms.length) parts.push(`###${title} ${label}`, ...syms);
+  }
+  const blob = new Blob([parts.join(",")], { type: "text/plain" });
+  const a = document.createElement("a"); a.href = URL.createObjectURL(blob);
+  a.download = `tradingview_${title.replace(/[^\p{L}\p{M}\p{N}]+/gu, "-")}_${date}.txt`; a.click();
+}
+function idxOn(dates, day) {  // ตำแหน่งแท่งแรกที่วันที่ ≥ day (รองรับกราฟรายสัปดาห์)
+  const i = dates.findIndex((d) => d >= day); return i < 0 ? null : i;
+}
 const pct = (x, d = 0) => x == null || isNaN(x) ? "-" : (x * 100).toFixed(d) + "%";
 const sgn = (x, d = 1) => x == null || isNaN(x) ? "-" : (x > 0 ? "+" : "") + (x * 100).toFixed(d) + "%";
 let market = "ALL", setupName = null, selected = null;
@@ -120,7 +186,7 @@ const fbKey = (s) => `${s.setup}|${s.market}|${s.ticker}|${s.date}`;
 function nextDay(d) { const t = new Date(d + "T00:00:00Z"); t.setUTCDate(t.getUTCDate() + 1); return t.toISOString().slice(0, 10); }
 
 function chart(b, opt = {}) {
-  const W = 640, H = opt.h || 300, volH = H * 0.2, pad = { l: 4, r: 46, t: 8, b: 16 };
+  const W = opt.w || 640, H = opt.h || 300, volH = H * 0.2, pad = { l: 4, r: 46, t: 8, b: 16 };
   const n = b.c.length, priceH = H - volH - pad.t - pad.b - 6;
   const lo = Math.min(...b.l, opt.baseLow ?? Infinity), hi = Math.max(...b.h);
   const y = (p) => pad.t + (hi - p) / (hi - lo || 1) * priceH;
@@ -162,7 +228,7 @@ function renderSetup() {
   const ex = s.examples || [];
   $("ex-card").style.display = ex.length ? "" : "none";
   $("examples").innerHTML = ex.map((e) => {
-    const mi = e.chart.d.indexOf(e.signal_date);
+    const mi = idxOn(e.chart.d, e.signal_date);
     return `<div class="ex ${e.label}"><b>${e.ticker}</b> <span class="tag ${e.label === "bad" ? "bad" : "pass"}">${e.label === "bad" ? "ไม่ใช่" : "ใช่"}</span> <span class="num">${e.signal_date}</span>${chart(e.chart, { h: 140, markIdx: mi })}</div>`;
   }).join("");
 }
@@ -216,16 +282,16 @@ function renderDetail() {
   const r = selected; if (!r) return;
   const s = currentSetup();
   const ex = (s.examples || []).find((e) => e.ticker === r.best_example && e.label === "good");
-  const bsi = r.chart.d.indexOf(r.base_start);
+  const bsi = idxOn(r.chart.d, r.base_start);
   const simTxt = r.sim_parts ? `<p class="desc">ความเหมือน ${r.similarity.toFixed(0)} = ทรงราคา ${r.sim_parts.sim_shape.toFixed(0)} · วอลุ่ม ${r.sim_parts.sim_volume.toFixed(0)} · ตัววัด ${r.sim_parts.sim_features.toFixed(0)} (เทียบกับตัวอย่าง ${r.best_example})</p>` : "";
   $("detail").innerHTML = `
     <h3>${r.ticker} <span class="tag">${r.market}</span> ${r.passed ? '<span class="tag pass">ผ่านสูตร</span>' : '<span class="tag sim">คล้ายตัวอย่าง</span>'}</h3>
     <p class="desc">${r.name || ""} · ราคาปิด ${r.date}: <span class="num">${r.close}</span> · stop <span class="num">${r.stop}</span> (เสี่ยง ${pct(r.risk_pct, 1)}) · ฐานเริ่ม ${r.base_start}</p>
     ${chart(r.chart, { baseLow: r.base_low, baseTop: r.base_top, baseStartIdx: bsi >= 0 ? bsi : null })}
-    ${ex ? `<p class="desc">ตัวอย่างที่คล้ายที่สุด: <b>${ex.ticker}</b> (วันสัญญาณ ${ex.signal_date})</p>${chart(ex.chart, { h: 180, markIdx: ex.chart.d.indexOf(ex.signal_date) })}` : ""}
+    ${ex ? `<p class="desc">ตัวอย่างที่คล้ายที่สุด: <b>${ex.ticker}</b> (วันสัญญาณ ${ex.signal_date})</p>${chart(ex.chart, { h: 180, markIdx: idxOn(ex.chart.d, ex.signal_date) })}` : ""}
     ${simTxt}
     <div class="actions">
-      <button class="good" id="fb-good">✓ ใช่ทรงนี้</button><button class="bad" id="fb-bad">✗ ไม่ใช่</button><button id="fb-clear">ล้างป้าย</button>
+      <button id="tv-open">🔍 ภาพใหญ่ใน TradingView</button><button class="good" id="fb-good">✓ ใช่ทรงนี้</button><button class="bad" id="fb-bad">✗ ไม่ใช่</button><button id="fb-clear">ล้างป้าย</button>
     </div>
     <h2 style="font-size:14px;margin:10px 0 0">เงื่อนไข</h2>
     <ul class="reasons">${r.reasons.map((x) => `<li class="${x.ok ? "ok" : "no"}">${x.ok ? "✓" : "·"} ${x.text}</li>`).join("")}</ul>
@@ -236,6 +302,9 @@ function renderDetail() {
   $("fb-good").onclick = () => setFb("good");
   $("fb-bad").onclick = () => setFb("bad");
   $("fb-clear").onclick = () => setFb(null);
+  const big = () => openTV(r.tv || r.ticker, `${r.ticker} · ${r.name || r.market}`, r.window, r.chart);
+  $("tv-open").onclick = big;
+  $("detail").querySelector("svg").onclick = big;
 }
 
 const FEATURE_LABELS = {
@@ -246,6 +315,7 @@ const FEATURE_LABELS = {
   updown_vol: "วอลุ่มวันขึ้น / วันลง", dist_top: "ห่างจากขอบบนฐาน", vs_sma20: "ราคาเทียบ SMA20", vs_sma50: "ราคาเทียบ SMA50",
 };
 
+$("tv-export").onclick = () => exportWatchlist(currentSetup().title || setupName, visibleSignals(), DATA.scan_date);
 $("export").onclick = () => {
   const rows = [["setup", "ticker", "market", "base_start", "entry_date", "label", "note"]];
   for (const s of DATA.signals) {

@@ -16,6 +16,7 @@ from detector import FEATURES
 PATH_LEN = 64          # ทุกช่วงถูกย่อ/ขยายให้ยาวเท่านี้ก่อนเทียบ
 BAND = 8               # DTW ยืดหดเวลาได้ไม่เกิน 8 จุดจาก 64
 SCALES = (0.75, 1.0, 1.33)   # ลองช่วงสั้นกว่า/ยาวกว่าตัวอย่าง เพราะฐานแต่ละตัวยาวไม่เท่ากัน
+MAX_WINDOW = 1300            # ทรงยาวสุดที่รองรับ (ทรง 1,000 วัน × 1.33) ต้องมีราคาย้อนหลังพอ ดู fetch_prices --period
 WEIGHTS = {"shape": 0.5, "volume": 0.2, "features": 0.3}
 
 
@@ -113,7 +114,7 @@ def similarity_scores(template: Template, prices: dict[str, pd.DataFrame], end_i
     """คะแนนความเหมือน 0–100 ของทุกหุ้นกับตัวอย่างหนึ่งรูป แยกเป็นทรงราคา วอลุ่ม และตัววัด"""
     best = {}
     for k in SCALES:
-        length = max(30, int(round(template.length * k)))
+        length = min(MAX_WINDOW, max(30, int(round(template.length * k))))
         symbols, pp, vp = candidate_paths(prices, end_idx, length)
         if not symbols:
             continue
@@ -145,7 +146,7 @@ def sketch_scores(points: list[float], length: int, prices: dict[str, pd.DataFra
     shape = sketch_shape(points)
     best: dict[str, tuple[float, int]] = {}
     for k in SCALES:
-        n = max(20, int(round(length * k)))
+        n = min(MAX_WINDOW, max(20, int(round(length * k))))
         symbols, pp, _ = candidate_paths(prices, end_idx, n)
         if not symbols:
             continue

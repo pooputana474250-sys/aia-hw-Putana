@@ -28,7 +28,6 @@ from setups import load_setups
 
 HOST, PORT = "127.0.0.1", 8770
 INBOX = EXAMPLES_DIR / "inbox"
-CHART_DAYS = 750
 
 STOCKS: dict = {}
 SCAN_DATE = END_IDX = TODAY = SCALE = None
@@ -86,7 +85,10 @@ def api_chart(q: dict) -> dict:
     s = STOCKS.get(to_symbol(q["ticker"], q["market"]))
     if s is None:
         raise ValueError(f"ไม่มีราคาของ {q['ticker']} ({q['market']}) ถ้าเป็นหุ้นนอกรายชื่อ ให้เพิ่มใน universe แล้วรัน fetch_prices")
-    return {"ticker": s.ticker, "market": s.market, "name": s.name, "chart": bars(s.prices.iloc[-CHART_DAYS:])}
+    days = int(q.get("days", 500))
+    # ช่วงยาว (5–10 ปี) แสดงเป็นแท่งรายสัปดาห์ เลือกฐานได้ละเอียดระดับสัปดาห์
+    return {"ticker": s.ticker, "market": s.market, "name": s.name, "tv": s.tv,
+            "chart": bars(s.prices.iloc[-days:], max_bars=600)}
 
 
 def api_sketch(q: dict) -> dict:

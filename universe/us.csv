@@ -1,504 +1,504 @@
-ticker,symbol,market,name,source,retrieved
-MMM,MMM,US,3M,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-AOS,AOS,US,A. O. Smith,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-ABT,ABT,US,Abbott Laboratories,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-ABBV,ABBV,US,AbbVie,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-ACN,ACN,US,Accenture,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-ADBE,ADBE,US,Adobe Inc.,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-AMD,AMD,US,Advanced Micro Devices,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-AES,AES,US,AES Corporation,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-AFL,AFL,US,Aflac,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-A,A,US,Agilent Technologies,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-APD,APD,US,Air Products,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-ABNB,ABNB,US,Airbnb,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-AKAM,AKAM,US,Akamai Technologies,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-ALB,ALB,US,Albemarle Corporation,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-ARE,ARE,US,Alexandria Real Estate Equities,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-ALGN,ALGN,US,Align Technology,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-ALLE,ALLE,US,Allegion,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-LNT,LNT,US,Alliant Energy,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-ALL,ALL,US,Allstate,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-GOOGL,GOOGL,US,Alphabet Inc. (Class A),https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-GOOG,GOOG,US,Alphabet Inc. (Class C),https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-MO,MO,US,Altria,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-AMZN,AMZN,US,Amazon,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-AMCR,AMCR,US,Amcor,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-AEE,AEE,US,Ameren,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-AEP,AEP,US,American Electric Power,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-AXP,AXP,US,American Express,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-AIG,AIG,US,American International Group,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-AMT,AMT,US,American Tower,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-AWK,AWK,US,American Water Works,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-AMP,AMP,US,Ameriprise Financial,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-AME,AME,US,Ametek,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-AMGN,AMGN,US,Amgen,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-APH,APH,US,Amphenol,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-ADI,ADI,US,Analog Devices,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-AON,AON,US,Aon plc,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-APA,APA,US,APA Corporation,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-APO,APO,US,Apollo Global Management,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-AAPL,AAPL,US,Apple Inc.,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-AMAT,AMAT,US,Applied Materials,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-APP,APP,US,AppLovin,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-APTV,APTV,US,Aptiv,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-ACGL,ACGL,US,Arch Capital Group,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-ADM,ADM,US,Archer Daniels Midland,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-ARES,ARES,US,Ares Management,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-ANET,ANET,US,Arista Networks,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-AJG,AJG,US,Arthur J. Gallagher & Co.,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-AIZ,AIZ,US,Assurant,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-T,T,US,AT&T,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-ATO,ATO,US,Atmos Energy,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-ADSK,ADSK,US,Autodesk,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-ADP,ADP,US,Automatic Data Processing,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-AZO,AZO,US,AutoZone,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-AVY,AVY,US,Avery Dennison,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-AXON,AXON,US,Axon Enterprise,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-BKR,BKR,US,Baker Hughes,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-BALL,BALL,US,Ball Corporation,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-BAC,BAC,US,Bank of America,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-BAX,BAX,US,Baxter International,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-BDX,BDX,US,Becton Dickinson,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-BRK.B,BRK-B,US,Berkshire Hathaway,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-BBY,BBY,US,Best Buy,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-TECH,TECH,US,Bio-Techne,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-BIIB,BIIB,US,Biogen,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-BLK,BLK,US,BlackRock,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-BX,BX,US,Blackstone Inc.,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-XYZ,XYZ,US,"Block, Inc.",https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-BE,BE,US,Bloom Energy,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-BNY,BNY,US,BNY Mellon,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-BA,BA,US,Boeing,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-BKNG,BKNG,US,Booking Holdings,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-BSX,BSX,US,Boston Scientific,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-BMY,BMY,US,Bristol Myers Squibb,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-AVGO,AVGO,US,Broadcom,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-BR,BR,US,Broadridge Financial Solutions,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-BRO,BRO,US,Brown & Brown,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-BF.B,BF-B,US,Brown–Forman,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-BG,BG,US,Bunge Global,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-BXP,BXP,US,"BXP, Inc.",https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-CHRW,CHRW,US,C.H. Robinson,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-CDNS,CDNS,US,Cadence Design Systems,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-CPT,CPT,US,Camden Property Trust,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-COF,COF,US,Capital One,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-CAH,CAH,US,Cardinal Health,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-CCL,CCL,US,Carnival Corporation,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-CARR,CARR,US,Carrier Global,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-CVNA,CVNA,US,Carvana,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-CASY,CASY,US,Casey's,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-CAT,CAT,US,Caterpillar Inc.,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-CBOE,CBOE,US,Cboe Global Markets,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-CBRE,CBRE,US,CBRE Group,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-CDW,CDW,US,CDW Corporation,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-COR,COR,US,Cencora,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-CNC,CNC,US,Centene Corporation,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-CNP,CNP,US,CenterPoint Energy,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-CF,CF,US,CF Industries,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-CRL,CRL,US,Charles River Laboratories,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-SCHW,SCHW,US,Charles Schwab Corporation,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-CHTR,CHTR,US,Charter Communications,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-CVX,CVX,US,Chevron Corporation,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-CMG,CMG,US,Chipotle Mexican Grill,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-CB,CB,US,Chubb Limited,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-CHD,CHD,US,Church & Dwight,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-CIEN,CIEN,US,Ciena,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-CI,CI,US,Cigna,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-CINF,CINF,US,Cincinnati Financial,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-CTAS,CTAS,US,Cintas,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-CSCO,CSCO,US,Cisco,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-C,C,US,Citigroup,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-CFG,CFG,US,Citizens Financial Group,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-CLX,CLX,US,Clorox,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-CME,CME,US,CME Group,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-CMS,CMS,US,CMS Energy,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-KO,KO,US,Coca-Cola Company (The),https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-CTSH,CTSH,US,Cognizant,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-COHR,COHR,US,Coherent Corp.,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-COIN,COIN,US,Coinbase,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-CL,CL,US,Colgate-Palmolive,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-CMCSA,CMCSA,US,Comcast,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-FIX,FIX,US,Comfort Systems USA,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-COP,COP,US,ConocoPhillips,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-ED,ED,US,Consolidated Edison,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-STZ,STZ,US,Constellation Brands,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-CEG,CEG,US,Constellation Energy,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-COO,COO,US,Cooper Companies (The),https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-CPRT,CPRT,US,Copart,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-GLW,GLW,US,Corning Inc.,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-CPAY,CPAY,US,Corpay,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-CSGP,CSGP,US,CoStar Group,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-COST,COST,US,Costco,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-CRH,CRH,US,CRH plc,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-CRWD,CRWD,US,CrowdStrike,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-CCI,CCI,US,Crown Castle,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-CSX,CSX,US,CSX Corporation,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-CMI,CMI,US,Cummins,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-CVS,CVS,US,CVS Health,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-DHR,DHR,US,Danaher Corporation,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-DRI,DRI,US,Darden Restaurants,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-DDOG,DDOG,US,Datadog,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-DVA,DVA,US,DaVita,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-DECK,DECK,US,Deckers Brands,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-DE,DE,US,Deere & Company,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-DELL,DELL,US,Dell Technologies,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-DAL,DAL,US,Delta Air Lines,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-DVN,DVN,US,Devon Energy,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-DXCM,DXCM,US,Dexcom,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-FANG,FANG,US,Diamondback Energy,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-DLR,DLR,US,Digital Realty,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-DG,DG,US,Dollar General,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-DLTR,DLTR,US,Dollar Tree,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-D,D,US,Dominion Energy,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-DPZ,DPZ,US,Domino's,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-DASH,DASH,US,DoorDash,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-DOV,DOV,US,Dover Corporation,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-DOW,DOW,US,Dow Inc.,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-DHI,DHI,US,D. R. Horton,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-DTE,DTE,US,DTE Energy,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-DUK,DUK,US,Duke Energy,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-DD,DD,US,DuPont,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-ETN,ETN,US,Eaton Corporation,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-EBAY,EBAY,US,eBay Inc.,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-ECHO,ECHO,US,EchoStar,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-ECL,ECL,US,Ecolab,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-EIX,EIX,US,Edison International,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-EW,EW,US,Edwards Lifesciences,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-ELV,ELV,US,Elevance Health,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-EME,EME,US,Emcor,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-EMR,EMR,US,Emerson Electric,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-ETR,ETR,US,Entergy,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-EOG,EOG,US,EOG Resources,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-EQT,EQT,US,EQT Corporation,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-EFX,EFX,US,Equifax,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-EQIX,EQIX,US,Equinix,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-ERIE,ERIE,US,Erie Indemnity,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-ESS,ESS,US,Essex Property Trust,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-EL,EL,US,Estée Lauder Companies (The),https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-EG,EG,US,Everest Group,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-EVRG,EVRG,US,Evergy,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-P,P,US,Everpure,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-ES,ES,US,Eversource Energy,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-EXC,EXC,US,Exelon,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-EXE,EXE,US,Expand Energy,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-EXPE,EXPE,US,Expedia Group,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-EXPD,EXPD,US,Expeditors International,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-EXR,EXR,US,Extra Space Storage,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-XOM,XOM,US,ExxonMobil,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-FFIV,FFIV,US,"F5, Inc.",https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-FDS,FDS,US,FactSet,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-FICO,FICO,US,Fair Isaac,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-FAST,FAST,US,Fastenal,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-FRT,FRT,US,Federal Realty Investment Trust,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-FDX,FDX,US,FedEx,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-FDXF,FDXF,US,FedEx Freight,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-FERG,FERG,US,Ferguson Enterprises,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-FIS,FIS,US,Fidelity National Information Services,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-FITB,FITB,US,Fifth Third Bancorp,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-FSLR,FSLR,US,First Solar,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-FE,FE,US,FirstEnergy,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-FISV,FISV,US,Fiserv,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-FLEX,FLEX,US,Flex Ltd.,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-F,F,US,Ford Motor Company,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-FTNT,FTNT,US,Fortinet,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-FTV,FTV,US,Fortive,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-FOXA,FOXA,US,Fox Corporation (Class A),https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-FOX,FOX,US,Fox Corporation (Class B),https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-BEN,BEN,US,Franklin Resources,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-FCX,FCX,US,Freeport-McMoRan,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-GRMN,GRMN,US,Garmin,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-IT,IT,US,Gartner,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-GE,GE,US,GE Aerospace,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-GEHC,GEHC,US,GE HealthCare,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-GEV,GEV,US,GE Vernova,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-GEN,GEN,US,Gen Digital,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-GNRC,GNRC,US,Generac,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-GD,GD,US,General Dynamics,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-GIS,GIS,US,General Mills,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-GM,GM,US,General Motors,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-GPC,GPC,US,Genuine Parts Company,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-GILD,GILD,US,Gilead Sciences,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-GPN,GPN,US,Global Payments,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-GL,GL,US,Globe Life,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-GDDY,GDDY,US,GoDaddy,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-GS,GS,US,Goldman Sachs,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-HAL,HAL,US,Halliburton,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-HIG,HIG,US,Hartford (The),https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-HAS,HAS,US,Hasbro,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-HCA,HCA,US,HCA Healthcare,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-DOC,DOC,US,Healthpeak Properties,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-HSIC,HSIC,US,Henry Schein,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-HSY,HSY,US,Hershey Company (The),https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-HPE,HPE,US,Hewlett Packard Enterprise,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-HLT,HLT,US,Hilton Worldwide,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-HD,HD,US,Home Depot (The),https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-HONA,HONA,US,Honeywell Aerospace,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-HON,HON,US,Honeywell Technologies,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-HRL,HRL,US,Hormel Foods,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-HST,HST,US,Host Hotels & Resorts,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-HWM,HWM,US,Howmet Aerospace,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-HPQ,HPQ,US,HP Inc.,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-HUBB,HUBB,US,Hubbell Incorporated,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-HUM,HUM,US,Humana,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-HBAN,HBAN,US,Huntington Bancshares,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-HII,HII,US,Huntington Ingalls Industries,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-IBM,IBM,US,IBM,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-IEX,IEX,US,IDEX Corporation,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-IDXX,IDXX,US,Idexx Laboratories,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-ITW,ITW,US,Illinois Tool Works,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-ILMN,ILMN,US,"Illumina, Inc.",https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-INCY,INCY,US,Incyte,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-IR,IR,US,Ingersoll Rand,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-PODD,PODD,US,Insulet Corporation,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-INTC,INTC,US,Intel,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-IBKR,IBKR,US,Interactive Brokers,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-ICE,ICE,US,Intercontinental Exchange,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-IFF,IFF,US,International Flavors & Fragrances,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-IP,IP,US,International Paper,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-INTU,INTU,US,Intuit,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-ISRG,ISRG,US,Intuitive Surgical,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-IVZ,IVZ,US,Invesco,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-INVH,INVH,US,Invitation Homes,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-IQV,IQV,US,IQVIA,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-IRM,IRM,US,Iron Mountain,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-JBHT,JBHT,US,J.B. Hunt,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-JBL,JBL,US,Jabil,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-JKHY,JKHY,US,Jack Henry & Associates,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-J,J,US,Jacobs Solutions,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-JNJ,JNJ,US,Johnson & Johnson,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-JCI,JCI,US,Johnson Controls,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-JPM,JPM,US,JPMorgan Chase,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-KVUE,KVUE,US,Kenvue,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-KDP,KDP,US,Keurig Dr Pepper,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-KEY,KEY,US,KeyCorp,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-KEYS,KEYS,US,Keysight Technologies,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-KMB,KMB,US,Kimberly-Clark,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-KIM,KIM,US,Kimco Realty,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-KMI,KMI,US,Kinder Morgan,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-KKR,KKR,US,KKR & Co.,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-KLAC,KLAC,US,KLA Corporation,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-KHC,KHC,US,Kraft Heinz,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-KR,KR,US,Kroger,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-LHX,LHX,US,L3Harris,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-LH,LH,US,Labcorp,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-LRCX,LRCX,US,Lam Research,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-LVS,LVS,US,Las Vegas Sands,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-LDOS,LDOS,US,Leidos,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-LEN,LEN,US,Lennar,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-LII,LII,US,Lennox International,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-LLY,LLY,US,Lilly (Eli),https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-LIN,LIN,US,Linde plc,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-LYV,LYV,US,Live Nation Entertainment,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-LMT,LMT,US,Lockheed Martin,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-L,L,US,Loews Corporation,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-LOW,LOW,US,Lowe's,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-LULU,LULU,US,Lululemon Athletica,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-LITE,LITE,US,Lumentum,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-LYB,LYB,US,LyondellBasell,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-MTB,MTB,US,M&T Bank,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-MPC,MPC,US,Marathon Petroleum,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-MAR,MAR,US,Marriott International,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-MRSH,MRSH,US,Marsh McLennan,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-MLM,MLM,US,Martin Marietta Materials,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-MRVL,MRVL,US,Marvell Technology,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-MAS,MAS,US,Masco,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-MA,MA,US,Mastercard,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-MKC,MKC,US,McCormick & Company,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-MCD,MCD,US,McDonald's,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-MCK,MCK,US,McKesson,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-MDT,MDT,US,Medtronic,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-MRK,MRK,US,Merck & Co.,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-META,META,US,Meta Platforms,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-MET,MET,US,MetLife,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-MTD,MTD,US,Mettler Toledo,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-MGM,MGM,US,MGM Resorts,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-MCHP,MCHP,US,Microchip Technology,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-MU,MU,US,Micron Technology,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-MSFT,MSFT,US,Microsoft,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-MAA,MAA,US,Mid-America Apartment Communities,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-MRNA,MRNA,US,Moderna,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-MDLZ,MDLZ,US,Mondelez International,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-MPWR,MPWR,US,Monolithic Power Systems,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-MNST,MNST,US,Monster Beverage,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-MCO,MCO,US,Moody's Corporation,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-MS,MS,US,Morgan Stanley,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-MOS,MOS,US,Mosaic Company (The),https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-MSI,MSI,US,Motorola Solutions,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-MSCI,MSCI,US,MSCI,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-NDAQ,NDAQ,US,"Nasdaq, Inc.",https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-NTAP,NTAP,US,NetApp,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-NFLX,NFLX,US,Netflix,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-NEM,NEM,US,Newmont,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-NWSA,NWSA,US,News Corp (Class A),https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-NWS,NWS,US,News Corp (Class B),https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-NEE,NEE,US,NextEra Energy,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-NKE,NKE,US,"Nike, Inc.",https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-NI,NI,US,NiSource,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-NDSN,NDSN,US,Nordson Corporation,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-NSC,NSC,US,Norfolk Southern,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-NTRS,NTRS,US,Northern Trust,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-NOC,NOC,US,Northrop Grumman,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-NCLH,NCLH,US,Norwegian Cruise Line Holdings,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-NRG,NRG,US,NRG Energy,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-NUE,NUE,US,Nucor,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-NVDA,NVDA,US,Nvidia,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-NVR,NVR,US,"NVR, Inc.",https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-NXPI,NXPI,US,NXP Semiconductors,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-ORLY,ORLY,US,O'Reilly Automotive,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-OXY,OXY,US,Occidental Petroleum,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-ODFL,ODFL,US,Old Dominion,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-OMC,OMC,US,Omnicom Group,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-ON,ON,US,ON Semiconductor,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-OKE,OKE,US,Oneok,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-ORCL,ORCL,US,Oracle Corporation,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-OTIS,OTIS,US,Otis Worldwide,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-PCAR,PCAR,US,Paccar,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-PKG,PKG,US,Packaging Corporation of America,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-PLTR,PLTR,US,Palantir Technologies,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-PANW,PANW,US,Palo Alto Networks,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-PH,PH,US,Parker Hannifin,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-PAYX,PAYX,US,Paychex,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-PYPL,PYPL,US,PayPal,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-PNR,PNR,US,Pentair,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-PEP,PEP,US,PepsiCo,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-PFE,PFE,US,Pfizer,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-PCG,PCG,US,PG&E Corporation,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-PM,PM,US,Philip Morris International,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-PSX,PSX,US,Phillips 66,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-PNW,PNW,US,Pinnacle West Capital,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-PNC,PNC,US,PNC Financial Services,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-PPG,PPG,US,PPG Industries,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-PPL,PPL,US,PPL Corporation,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-PFG,PFG,US,Principal Financial Group,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-PG,PG,US,Procter & Gamble,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-PGR,PGR,US,Progressive Corporation,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-PLD,PLD,US,Prologis,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-PRU,PRU,US,Prudential Financial,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-PTC,PTC,US,PTC Inc.,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-PEG,PEG,US,Public Service Enterprise Group,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-PSA,PSA,US,Public Storage,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-PHM,PHM,US,PulteGroup,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-Q,Q,US,Qnity Electronics,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-QCOM,QCOM,US,Qualcomm,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-PWR,PWR,US,Quanta Services,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-DGX,DGX,US,Quest Diagnostics,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-RL,RL,US,Ralph Lauren Corporation,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-RJF,RJF,US,Raymond James Financial,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-RDDT,RDDT,US,Reddit,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-O,O,US,Realty Income,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-REG,REG,US,Regency Centers,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-REGN,REGN,US,Regeneron Pharmaceuticals,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-RF,RF,US,Regions Financial Corporation,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-RSG,RSG,US,Republic Services,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-RMD,RMD,US,ResMed,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-RVTY,RVTY,US,Revvity,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-HOOD,HOOD,US,Robinhood Markets,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-ROK,ROK,US,Rockwell Automation,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-ROL,ROL,US,"Rollins, Inc.",https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-ROP,ROP,US,Roper Technologies,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-ROST,ROST,US,Ross Stores,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-RCL,RCL,US,Royal Caribbean Group,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-RTX,RTX,US,RTX Corporation,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-SPGI,SPGI,US,S&P Global,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-CRM,CRM,US,Salesforce,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-SNDK,SNDK,US,Sandisk,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-SBAC,SBAC,US,SBA Communications,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-SLB,SLB,US,Schlumberger,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-STX,STX,US,Seagate Technology,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-SRE,SRE,US,Sempra,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-NOW,NOW,US,ServiceNow,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-SHW,SHW,US,Sherwin-Williams,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-SPG,SPG,US,Simon Property Group,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-SKYD,SKYD,US,Skydance,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-SWKS,SWKS,US,Skyworks Solutions,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-SJM,SJM,US,J.M. Smucker Company (The),https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-SW,SW,US,Smurfit Westrock,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-SNA,SNA,US,Snap-on,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-SOLV,SOLV,US,Solventum,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-SO,SO,US,Southern Company,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-LUV,LUV,US,Southwest Airlines,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-SWK,SWK,US,Stanley Black & Decker,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-SBUX,SBUX,US,Starbucks,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-STT,STT,US,State Street Corporation,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-STLD,STLD,US,Steel Dynamics,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-STE,STE,US,Steris,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-SYK,SYK,US,Stryker Corporation,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-SMCI,SMCI,US,Supermicro,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-SYF,SYF,US,Synchrony Financial,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-SNPS,SNPS,US,Synopsys,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-SYY,SYY,US,Sysco,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-TMUS,TMUS,US,T-Mobile US,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-TROW,TROW,US,T. Rowe Price,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-TTWO,TTWO,US,Take-Two Interactive,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-TPR,TPR,US,"Tapestry, Inc.",https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-TRGP,TRGP,US,Targa Resources,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-TGT,TGT,US,Target Corporation,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-TEL,TEL,US,TE Connectivity,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-TDY,TDY,US,Teledyne Technologies,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-TER,TER,US,Teradyne,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-TSLA,TSLA,US,"Tesla, Inc.",https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-TXN,TXN,US,Texas Instruments,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-TPL,TPL,US,Texas Pacific Land Corporation,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-TXT,TXT,US,Textron,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-TMO,TMO,US,Thermo Fisher Scientific,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-TJX,TJX,US,TJX Companies,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-TKO,TKO,US,TKO Group Holdings,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-TSCO,TSCO,US,Tractor Supply,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-TT,TT,US,Trane Technologies,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-TDG,TDG,US,TransDigm Group,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-TRV,TRV,US,Travelers Companies (The),https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-TRMB,TRMB,US,Trimble Inc.,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-TFC,TFC,US,Truist Financial,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-TWLO,TWLO,US,Twilio,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-TYL,TYL,US,Tyler Technologies,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-TSN,TSN,US,Tyson Foods,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-USB,USB,US,U.S. Bancorp,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-UBER,UBER,US,Uber,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-UDR,UDR,US,"UDR, Inc.",https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-ULTA,ULTA,US,Ulta Beauty,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-UNP,UNP,US,Union Pacific Corporation,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-UAL,UAL,US,United Airlines Holdings,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-UPS,UPS,US,United Parcel Service,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-URI,URI,US,United Rentals,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-UNH,UNH,US,UnitedHealth Group,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-UHS,UHS,US,Universal Health Services,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-VLO,VLO,US,Valero Energy,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-VEEV,VEEV,US,Veeva Systems,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-VTR,VTR,US,Ventas,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-VLTO,VLTO,US,Veralto,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-VRSN,VRSN,US,Verisign,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-VRSK,VRSK,US,Verisk Analytics,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-VZ,VZ,US,Verizon,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-VRTX,VRTX,US,Vertex Pharmaceuticals,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-VRT,VRT,US,Vertiv,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-VTRS,VTRS,US,Viatris,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-VICI,VICI,US,Vici Properties,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-V,V,US,Visa Inc.,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-VST,VST,US,Vistra Corp.,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-VMRK,VMRK,US,Vivmark Residential,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-VMC,VMC,US,Vulcan Materials Company,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-VYLR,VYLR,US,Vylor,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-WRB,WRB,US,W. R. Berkley Corporation,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-GWW,GWW,US,W. W. Grainger,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-WAB,WAB,US,Wabtec,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-WMT,WMT,US,Walmart,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-DIS,DIS,US,Walt Disney Company (The),https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-WM,WM,US,Waste Management,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-WAT,WAT,US,Waters Corporation,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-WEC,WEC,US,WEC Energy Group,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-WFC,WFC,US,Wells Fargo,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-WELL,WELL,US,Welltower,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-WST,WST,US,West Pharmaceutical Services,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-WDC,WDC,US,Western Digital,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-WY,WY,US,Weyerhaeuser,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-WSM,WSM,US,"Williams-Sonoma, Inc.",https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-WMB,WMB,US,Williams Companies,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-WTW,WTW,US,Willis Towers Watson,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-WDAY,WDAY,US,"Workday, Inc.",https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-WYNN,WYNN,US,Wynn Resorts,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-XEL,XEL,US,Xcel Energy,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-XYL,XYL,US,Xylem Inc.,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-YUM,YUM,US,Yum! Brands,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-ZBRA,ZBRA,US,Zebra Technologies,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-ZBH,ZBH,US,Zimmer Biomet,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
-ZTS,ZTS,US,Zoetis,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+ticker,symbol,tv_symbol,market,name,source,retrieved
+MMM,MMM,NYSE:MMM,US,3M,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+AOS,AOS,NYSE:AOS,US,A. O. Smith,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+ABT,ABT,NYSE:ABT,US,Abbott Laboratories,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+ABBV,ABBV,NYSE:ABBV,US,AbbVie,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+ACN,ACN,NYSE:ACN,US,Accenture,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+ADBE,ADBE,NASDAQ:ADBE,US,Adobe Inc.,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+AMD,AMD,NASDAQ:AMD,US,Advanced Micro Devices,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+AES,AES,NYSE:AES,US,AES Corporation,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+AFL,AFL,NYSE:AFL,US,Aflac,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+A,A,NYSE:A,US,Agilent Technologies,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+APD,APD,NYSE:APD,US,Air Products,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+ABNB,ABNB,NASDAQ:ABNB,US,Airbnb,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+AKAM,AKAM,NASDAQ:AKAM,US,Akamai Technologies,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+ALB,ALB,NYSE:ALB,US,Albemarle Corporation,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+ARE,ARE,NYSE:ARE,US,Alexandria Real Estate Equities,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+ALGN,ALGN,NASDAQ:ALGN,US,Align Technology,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+ALLE,ALLE,NYSE:ALLE,US,Allegion,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+LNT,LNT,NASDAQ:LNT,US,Alliant Energy,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+ALL,ALL,NYSE:ALL,US,Allstate,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+GOOGL,GOOGL,NASDAQ:GOOGL,US,Alphabet Inc. (Class A),https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+GOOG,GOOG,NASDAQ:GOOG,US,Alphabet Inc. (Class C),https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+MO,MO,NYSE:MO,US,Altria,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+AMZN,AMZN,NASDAQ:AMZN,US,Amazon,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+AMCR,AMCR,NYSE:AMCR,US,Amcor,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+AEE,AEE,NYSE:AEE,US,Ameren,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+AEP,AEP,NASDAQ:AEP,US,American Electric Power,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+AXP,AXP,NYSE:AXP,US,American Express,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+AIG,AIG,NYSE:AIG,US,American International Group,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+AMT,AMT,NYSE:AMT,US,American Tower,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+AWK,AWK,NYSE:AWK,US,American Water Works,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+AMP,AMP,NYSE:AMP,US,Ameriprise Financial,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+AME,AME,NYSE:AME,US,Ametek,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+AMGN,AMGN,NASDAQ:AMGN,US,Amgen,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+APH,APH,NYSE:APH,US,Amphenol,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+ADI,ADI,NASDAQ:ADI,US,Analog Devices,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+AON,AON,NYSE:AON,US,Aon plc,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+APA,APA,NASDAQ:APA,US,APA Corporation,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+APO,APO,NYSE:APO,US,Apollo Global Management,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+AAPL,AAPL,NASDAQ:AAPL,US,Apple Inc.,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+AMAT,AMAT,NASDAQ:AMAT,US,Applied Materials,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+APP,APP,NASDAQ:APP,US,AppLovin,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+APTV,APTV,NYSE:APTV,US,Aptiv,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+ACGL,ACGL,NASDAQ:ACGL,US,Arch Capital Group,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+ADM,ADM,NYSE:ADM,US,Archer Daniels Midland,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+ARES,ARES,NYSE:ARES,US,Ares Management,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+ANET,ANET,NYSE:ANET,US,Arista Networks,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+AJG,AJG,NYSE:AJG,US,Arthur J. Gallagher & Co.,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+AIZ,AIZ,NYSE:AIZ,US,Assurant,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+T,T,NYSE:T,US,AT&T,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+ATO,ATO,NYSE:ATO,US,Atmos Energy,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+ADSK,ADSK,NASDAQ:ADSK,US,Autodesk,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+ADP,ADP,NASDAQ:ADP,US,Automatic Data Processing,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+AZO,AZO,NYSE:AZO,US,AutoZone,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+AVY,AVY,NYSE:AVY,US,Avery Dennison,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+AXON,AXON,NASDAQ:AXON,US,Axon Enterprise,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+BKR,BKR,NASDAQ:BKR,US,Baker Hughes,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+BALL,BALL,NYSE:BALL,US,Ball Corporation,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+BAC,BAC,NYSE:BAC,US,Bank of America,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+BAX,BAX,NYSE:BAX,US,Baxter International,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+BDX,BDX,NYSE:BDX,US,Becton Dickinson,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+BRK.B,BRK-B,NYSE:BRK.B,US,Berkshire Hathaway,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+BBY,BBY,NYSE:BBY,US,Best Buy,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+TECH,TECH,NASDAQ:TECH,US,Bio-Techne,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+BIIB,BIIB,NASDAQ:BIIB,US,Biogen,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+BLK,BLK,NYSE:BLK,US,BlackRock,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+BX,BX,NYSE:BX,US,Blackstone Inc.,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+XYZ,XYZ,NYSE:XYZ,US,"Block, Inc.",https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+BE,BE,NYSE:BE,US,Bloom Energy,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+BNY,BNY,NYSE:BNY,US,BNY Mellon,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+BA,BA,NYSE:BA,US,Boeing,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+BKNG,BKNG,NASDAQ:BKNG,US,Booking Holdings,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+BSX,BSX,NYSE:BSX,US,Boston Scientific,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+BMY,BMY,NYSE:BMY,US,Bristol Myers Squibb,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+AVGO,AVGO,NASDAQ:AVGO,US,Broadcom,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+BR,BR,NYSE:BR,US,Broadridge Financial Solutions,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+BRO,BRO,NYSE:BRO,US,Brown & Brown,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+BF.B,BF-B,NYSE:BF.B,US,Brown–Forman,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+BG,BG,NYSE:BG,US,Bunge Global,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+BXP,BXP,NYSE:BXP,US,"BXP, Inc.",https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+CHRW,CHRW,NASDAQ:CHRW,US,C.H. Robinson,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+CDNS,CDNS,NASDAQ:CDNS,US,Cadence Design Systems,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+CPT,CPT,NYSE:CPT,US,Camden Property Trust,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+COF,COF,NYSE:COF,US,Capital One,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+CAH,CAH,NYSE:CAH,US,Cardinal Health,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+CCL,CCL,NYSE:CCL,US,Carnival Corporation,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+CARR,CARR,NYSE:CARR,US,Carrier Global,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+CVNA,CVNA,NYSE:CVNA,US,Carvana,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+CASY,CASY,NASDAQ:CASY,US,Casey's,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+CAT,CAT,NYSE:CAT,US,Caterpillar Inc.,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+CBOE,CBOE,BATS:CBOE,US,Cboe Global Markets,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+CBRE,CBRE,NYSE:CBRE,US,CBRE Group,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+CDW,CDW,NASDAQ:CDW,US,CDW Corporation,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+COR,COR,NYSE:COR,US,Cencora,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+CNC,CNC,NYSE:CNC,US,Centene Corporation,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+CNP,CNP,NYSE:CNP,US,CenterPoint Energy,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+CF,CF,NYSE:CF,US,CF Industries,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+CRL,CRL,NYSE:CRL,US,Charles River Laboratories,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+SCHW,SCHW,NYSE:SCHW,US,Charles Schwab Corporation,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+CHTR,CHTR,NASDAQ:CHTR,US,Charter Communications,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+CVX,CVX,NYSE:CVX,US,Chevron Corporation,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+CMG,CMG,NYSE:CMG,US,Chipotle Mexican Grill,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+CB,CB,NYSE:CB,US,Chubb Limited,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+CHD,CHD,NYSE:CHD,US,Church & Dwight,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+CIEN,CIEN,NYSE:CIEN,US,Ciena,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+CI,CI,NYSE:CI,US,Cigna,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+CINF,CINF,NASDAQ:CINF,US,Cincinnati Financial,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+CTAS,CTAS,NASDAQ:CTAS,US,Cintas,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+CSCO,CSCO,NASDAQ:CSCO,US,Cisco,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+C,C,NYSE:C,US,Citigroup,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+CFG,CFG,NYSE:CFG,US,Citizens Financial Group,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+CLX,CLX,NYSE:CLX,US,Clorox,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+CME,CME,NASDAQ:CME,US,CME Group,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+CMS,CMS,NYSE:CMS,US,CMS Energy,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+KO,KO,NYSE:KO,US,Coca-Cola Company (The),https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+CTSH,CTSH,NASDAQ:CTSH,US,Cognizant,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+COHR,COHR,NYSE:COHR,US,Coherent Corp.,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+COIN,COIN,NASDAQ:COIN,US,Coinbase,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+CL,CL,NYSE:CL,US,Colgate-Palmolive,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+CMCSA,CMCSA,NASDAQ:CMCSA,US,Comcast,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+FIX,FIX,NYSE:FIX,US,Comfort Systems USA,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+COP,COP,NYSE:COP,US,ConocoPhillips,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+ED,ED,NYSE:ED,US,Consolidated Edison,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+STZ,STZ,NYSE:STZ,US,Constellation Brands,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+CEG,CEG,NASDAQ:CEG,US,Constellation Energy,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+COO,COO,NASDAQ:COO,US,Cooper Companies (The),https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+CPRT,CPRT,NASDAQ:CPRT,US,Copart,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+GLW,GLW,NYSE:GLW,US,Corning Inc.,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+CPAY,CPAY,NYSE:CPAY,US,Corpay,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+CSGP,CSGP,NASDAQ:CSGP,US,CoStar Group,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+COST,COST,NASDAQ:COST,US,Costco,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+CRH,CRH,NYSE:CRH,US,CRH plc,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+CRWD,CRWD,NASDAQ:CRWD,US,CrowdStrike,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+CCI,CCI,NYSE:CCI,US,Crown Castle,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+CSX,CSX,NASDAQ:CSX,US,CSX Corporation,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+CMI,CMI,NYSE:CMI,US,Cummins,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+CVS,CVS,NYSE:CVS,US,CVS Health,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+DHR,DHR,NYSE:DHR,US,Danaher Corporation,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+DRI,DRI,NYSE:DRI,US,Darden Restaurants,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+DDOG,DDOG,NASDAQ:DDOG,US,Datadog,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+DVA,DVA,NYSE:DVA,US,DaVita,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+DECK,DECK,NYSE:DECK,US,Deckers Brands,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+DE,DE,NYSE:DE,US,Deere & Company,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+DELL,DELL,NYSE:DELL,US,Dell Technologies,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+DAL,DAL,NYSE:DAL,US,Delta Air Lines,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+DVN,DVN,NYSE:DVN,US,Devon Energy,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+DXCM,DXCM,NASDAQ:DXCM,US,Dexcom,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+FANG,FANG,NASDAQ:FANG,US,Diamondback Energy,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+DLR,DLR,NYSE:DLR,US,Digital Realty,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+DG,DG,NYSE:DG,US,Dollar General,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+DLTR,DLTR,NASDAQ:DLTR,US,Dollar Tree,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+D,D,NYSE:D,US,Dominion Energy,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+DPZ,DPZ,NASDAQ:DPZ,US,Domino's,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+DASH,DASH,NASDAQ:DASH,US,DoorDash,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+DOV,DOV,NYSE:DOV,US,Dover Corporation,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+DOW,DOW,NYSE:DOW,US,Dow Inc.,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+DHI,DHI,NYSE:DHI,US,D. R. Horton,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+DTE,DTE,NYSE:DTE,US,DTE Energy,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+DUK,DUK,NYSE:DUK,US,Duke Energy,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+DD,DD,NYSE:DD,US,DuPont,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+ETN,ETN,NYSE:ETN,US,Eaton Corporation,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+EBAY,EBAY,NASDAQ:EBAY,US,eBay Inc.,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+ECHO,ECHO,NASDAQ:ECHO,US,EchoStar,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+ECL,ECL,NYSE:ECL,US,Ecolab,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+EIX,EIX,NYSE:EIX,US,Edison International,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+EW,EW,NYSE:EW,US,Edwards Lifesciences,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+ELV,ELV,NYSE:ELV,US,Elevance Health,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+EME,EME,NYSE:EME,US,Emcor,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+EMR,EMR,NYSE:EMR,US,Emerson Electric,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+ETR,ETR,NYSE:ETR,US,Entergy,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+EOG,EOG,NYSE:EOG,US,EOG Resources,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+EQT,EQT,NYSE:EQT,US,EQT Corporation,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+EFX,EFX,NYSE:EFX,US,Equifax,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+EQIX,EQIX,NASDAQ:EQIX,US,Equinix,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+ERIE,ERIE,NASDAQ:ERIE,US,Erie Indemnity,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+ESS,ESS,NYSE:ESS,US,Essex Property Trust,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+EL,EL,NYSE:EL,US,Estée Lauder Companies (The),https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+EG,EG,NYSE:EG,US,Everest Group,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+EVRG,EVRG,NASDAQ:EVRG,US,Evergy,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+P,P,NYSE:P,US,Everpure,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+ES,ES,NYSE:ES,US,Eversource Energy,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+EXC,EXC,NASDAQ:EXC,US,Exelon,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+EXE,EXE,NASDAQ:EXE,US,Expand Energy,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+EXPE,EXPE,NASDAQ:EXPE,US,Expedia Group,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+EXPD,EXPD,NYSE:EXPD,US,Expeditors International,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+EXR,EXR,NYSE:EXR,US,Extra Space Storage,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+XOM,XOM,NYSE:XOM,US,ExxonMobil,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+FFIV,FFIV,NASDAQ:FFIV,US,"F5, Inc.",https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+FDS,FDS,NYSE:FDS,US,FactSet,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+FICO,FICO,NYSE:FICO,US,Fair Isaac,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+FAST,FAST,NASDAQ:FAST,US,Fastenal,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+FRT,FRT,NYSE:FRT,US,Federal Realty Investment Trust,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+FDX,FDX,NYSE:FDX,US,FedEx,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+FDXF,FDXF,NYSE:FDXF,US,FedEx Freight,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+FERG,FERG,NYSE:FERG,US,Ferguson Enterprises,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+FIS,FIS,NYSE:FIS,US,Fidelity National Information Services,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+FITB,FITB,NYSE:FITB,US,Fifth Third Bancorp,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+FSLR,FSLR,NASDAQ:FSLR,US,First Solar,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+FE,FE,NYSE:FE,US,FirstEnergy,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+FISV,FISV,NASDAQ:FISV,US,Fiserv,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+FLEX,FLEX,NASDAQ:FLEX,US,Flex Ltd.,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+F,F,NYSE:F,US,Ford Motor Company,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+FTNT,FTNT,NASDAQ:FTNT,US,Fortinet,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+FTV,FTV,NYSE:FTV,US,Fortive,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+FOXA,FOXA,NASDAQ:FOXA,US,Fox Corporation (Class A),https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+FOX,FOX,NASDAQ:FOX,US,Fox Corporation (Class B),https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+BEN,BEN,NYSE:BEN,US,Franklin Resources,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+FCX,FCX,NYSE:FCX,US,Freeport-McMoRan,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+GRMN,GRMN,NYSE:GRMN,US,Garmin,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+IT,IT,NYSE:IT,US,Gartner,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+GE,GE,NYSE:GE,US,GE Aerospace,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+GEHC,GEHC,NASDAQ:GEHC,US,GE HealthCare,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+GEV,GEV,NYSE:GEV,US,GE Vernova,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+GEN,GEN,NASDAQ:GEN,US,Gen Digital,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+GNRC,GNRC,NYSE:GNRC,US,Generac,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+GD,GD,NYSE:GD,US,General Dynamics,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+GIS,GIS,NYSE:GIS,US,General Mills,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+GM,GM,NYSE:GM,US,General Motors,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+GPC,GPC,NYSE:GPC,US,Genuine Parts Company,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+GILD,GILD,NASDAQ:GILD,US,Gilead Sciences,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+GPN,GPN,NYSE:GPN,US,Global Payments,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+GL,GL,NYSE:GL,US,Globe Life,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+GDDY,GDDY,NYSE:GDDY,US,GoDaddy,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+GS,GS,NYSE:GS,US,Goldman Sachs,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+HAL,HAL,NYSE:HAL,US,Halliburton,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+HIG,HIG,NYSE:HIG,US,Hartford (The),https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+HAS,HAS,NASDAQ:HAS,US,Hasbro,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+HCA,HCA,NYSE:HCA,US,HCA Healthcare,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+DOC,DOC,NYSE:DOC,US,Healthpeak Properties,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+HSIC,HSIC,NASDAQ:HSIC,US,Henry Schein,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+HSY,HSY,NYSE:HSY,US,Hershey Company (The),https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+HPE,HPE,NYSE:HPE,US,Hewlett Packard Enterprise,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+HLT,HLT,NYSE:HLT,US,Hilton Worldwide,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+HD,HD,NYSE:HD,US,Home Depot (The),https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+HONA,HONA,NASDAQ:HONA,US,Honeywell Aerospace,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+HON,HON,NASDAQ:HON,US,Honeywell Technologies,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+HRL,HRL,NYSE:HRL,US,Hormel Foods,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+HST,HST,NASDAQ:HST,US,Host Hotels & Resorts,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+HWM,HWM,NYSE:HWM,US,Howmet Aerospace,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+HPQ,HPQ,NYSE:HPQ,US,HP Inc.,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+HUBB,HUBB,NYSE:HUBB,US,Hubbell Incorporated,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+HUM,HUM,NYSE:HUM,US,Humana,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+HBAN,HBAN,NASDAQ:HBAN,US,Huntington Bancshares,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+HII,HII,NYSE:HII,US,Huntington Ingalls Industries,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+IBM,IBM,NYSE:IBM,US,IBM,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+IEX,IEX,NYSE:IEX,US,IDEX Corporation,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+IDXX,IDXX,NASDAQ:IDXX,US,Idexx Laboratories,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+ITW,ITW,NYSE:ITW,US,Illinois Tool Works,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+ILMN,ILMN,NASDAQ:ILMN,US,"Illumina, Inc.",https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+INCY,INCY,NASDAQ:INCY,US,Incyte,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+IR,IR,NYSE:IR,US,Ingersoll Rand,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+PODD,PODD,NASDAQ:PODD,US,Insulet Corporation,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+INTC,INTC,NASDAQ:INTC,US,Intel,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+IBKR,IBKR,NASDAQ:IBKR,US,Interactive Brokers,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+ICE,ICE,NYSE:ICE,US,Intercontinental Exchange,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+IFF,IFF,NYSE:IFF,US,International Flavors & Fragrances,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+IP,IP,NYSE:IP,US,International Paper,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+INTU,INTU,NASDAQ:INTU,US,Intuit,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+ISRG,ISRG,NASDAQ:ISRG,US,Intuitive Surgical,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+IVZ,IVZ,NYSE:IVZ,US,Invesco,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+INVH,INVH,NYSE:INVH,US,Invitation Homes,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+IQV,IQV,NYSE:IQV,US,IQVIA,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+IRM,IRM,NYSE:IRM,US,Iron Mountain,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+JBHT,JBHT,NASDAQ:JBHT,US,J.B. Hunt,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+JBL,JBL,NYSE:JBL,US,Jabil,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+JKHY,JKHY,NASDAQ:JKHY,US,Jack Henry & Associates,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+J,J,NYSE:J,US,Jacobs Solutions,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+JNJ,JNJ,NYSE:JNJ,US,Johnson & Johnson,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+JCI,JCI,NYSE:JCI,US,Johnson Controls,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+JPM,JPM,NYSE:JPM,US,JPMorgan Chase,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+KVUE,KVUE,NYSE:KVUE,US,Kenvue,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+KDP,KDP,NASDAQ:KDP,US,Keurig Dr Pepper,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+KEY,KEY,NYSE:KEY,US,KeyCorp,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+KEYS,KEYS,NYSE:KEYS,US,Keysight Technologies,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+KMB,KMB,NASDAQ:KMB,US,Kimberly-Clark,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+KIM,KIM,NYSE:KIM,US,Kimco Realty,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+KMI,KMI,NYSE:KMI,US,Kinder Morgan,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+KKR,KKR,NYSE:KKR,US,KKR & Co.,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+KLAC,KLAC,NASDAQ:KLAC,US,KLA Corporation,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+KHC,KHC,NYSE:KHC,US,Kraft Heinz,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+KR,KR,NYSE:KR,US,Kroger,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+LHX,LHX,NYSE:LHX,US,L3Harris,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+LH,LH,NYSE:LH,US,Labcorp,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+LRCX,LRCX,NASDAQ:LRCX,US,Lam Research,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+LVS,LVS,NYSE:LVS,US,Las Vegas Sands,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+LDOS,LDOS,NYSE:LDOS,US,Leidos,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+LEN,LEN,NYSE:LEN,US,Lennar,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+LII,LII,NYSE:LII,US,Lennox International,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+LLY,LLY,NYSE:LLY,US,Lilly (Eli),https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+LIN,LIN,NASDAQ:LIN,US,Linde plc,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+LYV,LYV,NYSE:LYV,US,Live Nation Entertainment,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+LMT,LMT,NYSE:LMT,US,Lockheed Martin,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+L,L,NYSE:L,US,Loews Corporation,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+LOW,LOW,NYSE:LOW,US,Lowe's,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+LULU,LULU,NASDAQ:LULU,US,Lululemon Athletica,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+LITE,LITE,NASDAQ:LITE,US,Lumentum,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+LYB,LYB,NYSE:LYB,US,LyondellBasell,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+MTB,MTB,NYSE:MTB,US,M&T Bank,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+MPC,MPC,NYSE:MPC,US,Marathon Petroleum,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+MAR,MAR,NASDAQ:MAR,US,Marriott International,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+MRSH,MRSH,NYSE:MRSH,US,Marsh McLennan,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+MLM,MLM,NYSE:MLM,US,Martin Marietta Materials,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+MRVL,MRVL,NASDAQ:MRVL,US,Marvell Technology,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+MAS,MAS,NYSE:MAS,US,Masco,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+MA,MA,NYSE:MA,US,Mastercard,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+MKC,MKC,NYSE:MKC,US,McCormick & Company,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+MCD,MCD,NYSE:MCD,US,McDonald's,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+MCK,MCK,NYSE:MCK,US,McKesson,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+MDT,MDT,NYSE:MDT,US,Medtronic,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+MRK,MRK,NYSE:MRK,US,Merck & Co.,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+META,META,NASDAQ:META,US,Meta Platforms,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+MET,MET,NYSE:MET,US,MetLife,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+MTD,MTD,NYSE:MTD,US,Mettler Toledo,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+MGM,MGM,NYSE:MGM,US,MGM Resorts,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+MCHP,MCHP,NASDAQ:MCHP,US,Microchip Technology,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+MU,MU,NASDAQ:MU,US,Micron Technology,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+MSFT,MSFT,NASDAQ:MSFT,US,Microsoft,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+MAA,MAA,NYSE:MAA,US,Mid-America Apartment Communities,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+MRNA,MRNA,NASDAQ:MRNA,US,Moderna,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+MDLZ,MDLZ,NASDAQ:MDLZ,US,Mondelez International,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+MPWR,MPWR,NASDAQ:MPWR,US,Monolithic Power Systems,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+MNST,MNST,NASDAQ:MNST,US,Monster Beverage,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+MCO,MCO,NYSE:MCO,US,Moody's Corporation,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+MS,MS,NYSE:MS,US,Morgan Stanley,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+MOS,MOS,NYSE:MOS,US,Mosaic Company (The),https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+MSI,MSI,NYSE:MSI,US,Motorola Solutions,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+MSCI,MSCI,NYSE:MSCI,US,MSCI,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+NDAQ,NDAQ,NASDAQ:NDAQ,US,"Nasdaq, Inc.",https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+NTAP,NTAP,NASDAQ:NTAP,US,NetApp,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+NFLX,NFLX,NASDAQ:NFLX,US,Netflix,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+NEM,NEM,NYSE:NEM,US,Newmont,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+NWSA,NWSA,NASDAQ:NWSA,US,News Corp (Class A),https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+NWS,NWS,NASDAQ:NWS,US,News Corp (Class B),https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+NEE,NEE,NYSE:NEE,US,NextEra Energy,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+NKE,NKE,NYSE:NKE,US,"Nike, Inc.",https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+NI,NI,NYSE:NI,US,NiSource,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+NDSN,NDSN,NASDAQ:NDSN,US,Nordson Corporation,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+NSC,NSC,NYSE:NSC,US,Norfolk Southern,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+NTRS,NTRS,NASDAQ:NTRS,US,Northern Trust,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+NOC,NOC,NYSE:NOC,US,Northrop Grumman,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+NCLH,NCLH,NYSE:NCLH,US,Norwegian Cruise Line Holdings,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+NRG,NRG,NYSE:NRG,US,NRG Energy,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+NUE,NUE,NYSE:NUE,US,Nucor,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+NVDA,NVDA,NASDAQ:NVDA,US,Nvidia,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+NVR,NVR,NYSE:NVR,US,"NVR, Inc.",https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+NXPI,NXPI,NASDAQ:NXPI,US,NXP Semiconductors,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+ORLY,ORLY,NASDAQ:ORLY,US,O'Reilly Automotive,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+OXY,OXY,NYSE:OXY,US,Occidental Petroleum,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+ODFL,ODFL,NASDAQ:ODFL,US,Old Dominion,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+OMC,OMC,NYSE:OMC,US,Omnicom Group,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+ON,ON,NASDAQ:ON,US,ON Semiconductor,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+OKE,OKE,NYSE:OKE,US,Oneok,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+ORCL,ORCL,NYSE:ORCL,US,Oracle Corporation,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+OTIS,OTIS,NYSE:OTIS,US,Otis Worldwide,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+PCAR,PCAR,NASDAQ:PCAR,US,Paccar,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+PKG,PKG,NYSE:PKG,US,Packaging Corporation of America,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+PLTR,PLTR,NASDAQ:PLTR,US,Palantir Technologies,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+PANW,PANW,NASDAQ:PANW,US,Palo Alto Networks,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+PH,PH,NYSE:PH,US,Parker Hannifin,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+PAYX,PAYX,NASDAQ:PAYX,US,Paychex,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+PYPL,PYPL,NASDAQ:PYPL,US,PayPal,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+PNR,PNR,NYSE:PNR,US,Pentair,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+PEP,PEP,NASDAQ:PEP,US,PepsiCo,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+PFE,PFE,NYSE:PFE,US,Pfizer,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+PCG,PCG,NYSE:PCG,US,PG&E Corporation,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+PM,PM,NYSE:PM,US,Philip Morris International,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+PSX,PSX,NYSE:PSX,US,Phillips 66,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+PNW,PNW,NYSE:PNW,US,Pinnacle West Capital,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+PNC,PNC,NYSE:PNC,US,PNC Financial Services,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+PPG,PPG,NYSE:PPG,US,PPG Industries,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+PPL,PPL,NYSE:PPL,US,PPL Corporation,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+PFG,PFG,NASDAQ:PFG,US,Principal Financial Group,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+PG,PG,NYSE:PG,US,Procter & Gamble,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+PGR,PGR,NYSE:PGR,US,Progressive Corporation,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+PLD,PLD,NYSE:PLD,US,Prologis,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+PRU,PRU,NYSE:PRU,US,Prudential Financial,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+PTC,PTC,NASDAQ:PTC,US,PTC Inc.,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+PEG,PEG,NYSE:PEG,US,Public Service Enterprise Group,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+PSA,PSA,NYSE:PSA,US,Public Storage,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+PHM,PHM,NYSE:PHM,US,PulteGroup,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+Q,Q,NYSE:Q,US,Qnity Electronics,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+QCOM,QCOM,NASDAQ:QCOM,US,Qualcomm,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+PWR,PWR,NYSE:PWR,US,Quanta Services,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+DGX,DGX,NYSE:DGX,US,Quest Diagnostics,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+RL,RL,NYSE:RL,US,Ralph Lauren Corporation,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+RJF,RJF,NYSE:RJF,US,Raymond James Financial,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+RDDT,RDDT,NYSE:RDDT,US,Reddit,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+O,O,NYSE:O,US,Realty Income,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+REG,REG,NASDAQ:REG,US,Regency Centers,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+REGN,REGN,NASDAQ:REGN,US,Regeneron Pharmaceuticals,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+RF,RF,NYSE:RF,US,Regions Financial Corporation,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+RSG,RSG,NYSE:RSG,US,Republic Services,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+RMD,RMD,NYSE:RMD,US,ResMed,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+RVTY,RVTY,NYSE:RVTY,US,Revvity,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+HOOD,HOOD,NASDAQ:HOOD,US,Robinhood Markets,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+ROK,ROK,NYSE:ROK,US,Rockwell Automation,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+ROL,ROL,NYSE:ROL,US,"Rollins, Inc.",https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+ROP,ROP,NASDAQ:ROP,US,Roper Technologies,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+ROST,ROST,NASDAQ:ROST,US,Ross Stores,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+RCL,RCL,NYSE:RCL,US,Royal Caribbean Group,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+RTX,RTX,NYSE:RTX,US,RTX Corporation,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+SPGI,SPGI,NYSE:SPGI,US,S&P Global,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+CRM,CRM,NYSE:CRM,US,Salesforce,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+SNDK,SNDK,NASDAQ:SNDK,US,Sandisk,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+SBAC,SBAC,NASDAQ:SBAC,US,SBA Communications,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+SLB,SLB,NYSE:SLB,US,Schlumberger,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+STX,STX,NASDAQ:STX,US,Seagate Technology,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+SRE,SRE,NYSE:SRE,US,Sempra,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+NOW,NOW,NYSE:NOW,US,ServiceNow,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+SHW,SHW,NYSE:SHW,US,Sherwin-Williams,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+SPG,SPG,NYSE:SPG,US,Simon Property Group,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+SKYD,SKYD,NYSE:SKYD,US,Skydance,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+SWKS,SWKS,NASDAQ:SWKS,US,Skyworks Solutions,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+SJM,SJM,NYSE:SJM,US,J.M. Smucker Company (The),https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+SW,SW,NYSE:SW,US,Smurfit Westrock,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+SNA,SNA,NYSE:SNA,US,Snap-on,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+SOLV,SOLV,NYSE:SOLV,US,Solventum,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+SO,SO,NYSE:SO,US,Southern Company,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+LUV,LUV,NYSE:LUV,US,Southwest Airlines,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+SWK,SWK,NYSE:SWK,US,Stanley Black & Decker,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+SBUX,SBUX,NASDAQ:SBUX,US,Starbucks,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+STT,STT,NYSE:STT,US,State Street Corporation,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+STLD,STLD,NASDAQ:STLD,US,Steel Dynamics,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+STE,STE,NYSE:STE,US,Steris,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+SYK,SYK,NYSE:SYK,US,Stryker Corporation,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+SMCI,SMCI,NASDAQ:SMCI,US,Supermicro,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+SYF,SYF,NYSE:SYF,US,Synchrony Financial,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+SNPS,SNPS,NASDAQ:SNPS,US,Synopsys,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+SYY,SYY,NYSE:SYY,US,Sysco,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+TMUS,TMUS,NASDAQ:TMUS,US,T-Mobile US,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+TROW,TROW,NASDAQ:TROW,US,T. Rowe Price,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+TTWO,TTWO,NASDAQ:TTWO,US,Take-Two Interactive,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+TPR,TPR,NYSE:TPR,US,"Tapestry, Inc.",https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+TRGP,TRGP,NYSE:TRGP,US,Targa Resources,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+TGT,TGT,NYSE:TGT,US,Target Corporation,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+TEL,TEL,NYSE:TEL,US,TE Connectivity,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+TDY,TDY,NYSE:TDY,US,Teledyne Technologies,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+TER,TER,NASDAQ:TER,US,Teradyne,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+TSLA,TSLA,NASDAQ:TSLA,US,"Tesla, Inc.",https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+TXN,TXN,NASDAQ:TXN,US,Texas Instruments,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+TPL,TPL,NYSE:TPL,US,Texas Pacific Land Corporation,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+TXT,TXT,NYSE:TXT,US,Textron,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+TMO,TMO,NYSE:TMO,US,Thermo Fisher Scientific,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+TJX,TJX,NYSE:TJX,US,TJX Companies,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+TKO,TKO,NYSE:TKO,US,TKO Group Holdings,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+TSCO,TSCO,NASDAQ:TSCO,US,Tractor Supply,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+TT,TT,NYSE:TT,US,Trane Technologies,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+TDG,TDG,NYSE:TDG,US,TransDigm Group,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+TRV,TRV,NYSE:TRV,US,Travelers Companies (The),https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+TRMB,TRMB,NASDAQ:TRMB,US,Trimble Inc.,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+TFC,TFC,NYSE:TFC,US,Truist Financial,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+TWLO,TWLO,NYSE:TWLO,US,Twilio,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+TYL,TYL,NYSE:TYL,US,Tyler Technologies,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+TSN,TSN,NYSE:TSN,US,Tyson Foods,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+USB,USB,NYSE:USB,US,U.S. Bancorp,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+UBER,UBER,NYSE:UBER,US,Uber,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+UDR,UDR,NYSE:UDR,US,"UDR, Inc.",https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+ULTA,ULTA,NASDAQ:ULTA,US,Ulta Beauty,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+UNP,UNP,NYSE:UNP,US,Union Pacific Corporation,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+UAL,UAL,NASDAQ:UAL,US,United Airlines Holdings,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+UPS,UPS,NYSE:UPS,US,United Parcel Service,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+URI,URI,NYSE:URI,US,United Rentals,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+UNH,UNH,NYSE:UNH,US,UnitedHealth Group,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+UHS,UHS,NYSE:UHS,US,Universal Health Services,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+VLO,VLO,NYSE:VLO,US,Valero Energy,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+VEEV,VEEV,NYSE:VEEV,US,Veeva Systems,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+VTR,VTR,NYSE:VTR,US,Ventas,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+VLTO,VLTO,NYSE:VLTO,US,Veralto,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+VRSN,VRSN,NASDAQ:VRSN,US,Verisign,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+VRSK,VRSK,NASDAQ:VRSK,US,Verisk Analytics,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+VZ,VZ,NYSE:VZ,US,Verizon,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+VRTX,VRTX,NASDAQ:VRTX,US,Vertex Pharmaceuticals,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+VRT,VRT,NYSE:VRT,US,Vertiv,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+VTRS,VTRS,NASDAQ:VTRS,US,Viatris,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+VICI,VICI,NYSE:VICI,US,Vici Properties,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+V,V,NYSE:V,US,Visa Inc.,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+VST,VST,NYSE:VST,US,Vistra Corp.,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+VMRK,VMRK,NYSE:VMRK,US,Vivmark Residential,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+VMC,VMC,NYSE:VMC,US,Vulcan Materials Company,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+VYLR,VYLR,NYSE:VYLR,US,Vylor,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+WRB,WRB,NYSE:WRB,US,W. R. Berkley Corporation,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+GWW,GWW,NYSE:GWW,US,W. W. Grainger,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+WAB,WAB,NYSE:WAB,US,Wabtec,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+WMT,WMT,NASDAQ:WMT,US,Walmart,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+DIS,DIS,NYSE:DIS,US,Walt Disney Company (The),https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+WM,WM,NYSE:WM,US,Waste Management,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+WAT,WAT,NYSE:WAT,US,Waters Corporation,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+WEC,WEC,NYSE:WEC,US,WEC Energy Group,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+WFC,WFC,NYSE:WFC,US,Wells Fargo,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+WELL,WELL,NYSE:WELL,US,Welltower,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+WST,WST,NYSE:WST,US,West Pharmaceutical Services,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+WDC,WDC,NASDAQ:WDC,US,Western Digital,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+WY,WY,NYSE:WY,US,Weyerhaeuser,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+WSM,WSM,NYSE:WSM,US,"Williams-Sonoma, Inc.",https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+WMB,WMB,NYSE:WMB,US,Williams Companies,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+WTW,WTW,NASDAQ:WTW,US,Willis Towers Watson,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+WDAY,WDAY,NASDAQ:WDAY,US,"Workday, Inc.",https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+WYNN,WYNN,NASDAQ:WYNN,US,Wynn Resorts,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+XEL,XEL,NASDAQ:XEL,US,Xcel Energy,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+XYL,XYL,NYSE:XYL,US,Xylem Inc.,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+YUM,YUM,NYSE:YUM,US,Yum! Brands,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+ZBRA,ZBRA,NASDAQ:ZBRA,US,Zebra Technologies,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+ZBH,ZBH,NYSE:ZBH,US,Zimmer Biomet,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01
+ZTS,ZTS,NYSE:ZTS,US,Zoetis,https://en.wikipedia.org/wiki/List_of_S%26P_500_companies,2026-11-01

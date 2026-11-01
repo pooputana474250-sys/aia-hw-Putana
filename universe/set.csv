@@ -1,52 +1,52 @@
-ticker,symbol,market,name,source,retrieved
-ADVANC,ADVANC.BK,SET,Advanced Info Service,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
-AOT,AOT.BK,SET,Airports of Thailand,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
-AWC,AWC.BK,SET,Asset World Corp,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
-BANPU,BANPU.BK,SET,Banpu,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
-BBL,BBL.BK,SET,Bangkok Bank,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
-BCP,BCP.BK,SET,Bangchak Corporation,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
-BDMS,BDMS.BK,SET,Bangkok Dusit Medical Service,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
-BEM,BEM.BK,SET,Bangkok Expressway and Metro,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
-BH,BH.BK,SET,Bumrungrad International Hospital,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
-BJC,BJC.BK,SET,Berli Jucker,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
-BTS,BTS.BK,SET,BTS Group Holdings,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
-CBG,CBG.BK,SET,Carabao Group,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
-CCET,CCET.BK,SET,Cal-Comp Electronics (Thailand),https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
-COM7,COM7.BK,SET,Com Seven,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
-CPALL,CPALL.BK,SET,CP All,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
-CPF,CPF.BK,SET,Charoen Pokphand Foods,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
-CPN,CPN.BK,SET,Central Pattana,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
-CRC,CRC.BK,SET,Central Retail Corporation,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
-DELTA,DELTA.BK,SET,Delta Electronics (Thailand),https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
-EGCO,EGCO.BK,SET,Electricity Generating,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
-GPSC,GPSC.BK,SET,Global Power Synergy,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
-GULF,GULF.BK,SET,Gulf Development,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
-HMPRO,HMPRO.BK,SET,Home Product Center,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
-IVL,IVL.BK,SET,Indorama Ventures,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
-KBANK,KBANK.BK,SET,Kasikornbank,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
-KCE,KCE.BK,SET,KCE Electronics,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
-KKP,KKP.BK,SET,Kiatnakin Phatra Bank,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
-KTB,KTB.BK,SET,Krungthai Bank,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
-KTC,KTC.BK,SET,Krungthai Card,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
-LH,LH.BK,SET,Land and Houses,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
-MINT,MINT.BK,SET,Minor International,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
-MTC,MTC.BK,SET,Muangthai Capital,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
-OR,OR.BK,SET,PTT Oil and Retail Business,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
-OSP,OSP.BK,SET,Osotspa,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
-PTT,PTT.BK,SET,PTT,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
-PTTEP,PTTEP.BK,SET,PTT Exploration and Production,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
-PTTGC,PTTGC.BK,SET,PTT Global Chemical,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
-RATCH,RATCH.BK,SET,Ratch Group,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
-SCB,SCB.BK,SET,Siam Commercial Bank,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
-SCC,SCC.BK,SET,Siam Cement Group,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
-SCGP,SCGP.BK,SET,SCG Packaging,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
-TCAP,TCAP.BK,SET,Thanachart Capital,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
-TIDLOR,TIDLOR.BK,SET,Tidlor Holdings,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
-TISCO,TISCO.BK,SET,Tisco Financial Group,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
-TLI,TLI.BK,SET,Thai Life Insurance,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
-TOP,TOP.BK,SET,Thai Oil,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
-TRUE,TRUE.BK,SET,TRUE Corporation,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
-TTB,TTB.BK,SET,TMBThanachart Bank,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
-TU,TU.BK,SET,Thai Union Group,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
-VGI,VGI.BK,SET,VGI,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
-WHA,WHA.BK,SET,WHA Corporation,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
+ticker,symbol,tv_symbol,market,name,source,retrieved
+ADVANC,ADVANC.BK,SET:ADVANC,SET,Advanced Info Service,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
+AOT,AOT.BK,SET:AOT,SET,Airports of Thailand,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
+AWC,AWC.BK,SET:AWC,SET,Asset World Corp,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
+BANPU,BANPU.BK,SET:BANPU,SET,Banpu,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
+BBL,BBL.BK,SET:BBL,SET,Bangkok Bank,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
+BCP,BCP.BK,SET:BCP,SET,Bangchak Corporation,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
+BDMS,BDMS.BK,SET:BDMS,SET,Bangkok Dusit Medical Service,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
+BEM,BEM.BK,SET:BEM,SET,Bangkok Expressway and Metro,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
+BH,BH.BK,SET:BH,SET,Bumrungrad International Hospital,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
+BJC,BJC.BK,SET:BJC,SET,Berli Jucker,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
+BTS,BTS.BK,SET:BTS,SET,BTS Group Holdings,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
+CBG,CBG.BK,SET:CBG,SET,Carabao Group,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
+CCET,CCET.BK,SET:CCET,SET,Cal-Comp Electronics (Thailand),https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
+COM7,COM7.BK,SET:COM7,SET,Com Seven,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
+CPALL,CPALL.BK,SET:CPALL,SET,CP All,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
+CPF,CPF.BK,SET:CPF,SET,Charoen Pokphand Foods,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
+CPN,CPN.BK,SET:CPN,SET,Central Pattana,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
+CRC,CRC.BK,SET:CRC,SET,Central Retail Corporation,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
+DELTA,DELTA.BK,SET:DELTA,SET,Delta Electronics (Thailand),https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
+EGCO,EGCO.BK,SET:EGCO,SET,Electricity Generating,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
+GPSC,GPSC.BK,SET:GPSC,SET,Global Power Synergy,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
+GULF,GULF.BK,SET:GULF,SET,Gulf Development,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
+HMPRO,HMPRO.BK,SET:HMPRO,SET,Home Product Center,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
+IVL,IVL.BK,SET:IVL,SET,Indorama Ventures,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
+KBANK,KBANK.BK,SET:KBANK,SET,Kasikornbank,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
+KCE,KCE.BK,SET:KCE,SET,KCE Electronics,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
+KKP,KKP.BK,SET:KKP,SET,Kiatnakin Phatra Bank,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
+KTB,KTB.BK,SET:KTB,SET,Krungthai Bank,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
+KTC,KTC.BK,SET:KTC,SET,Krungthai Card,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
+LH,LH.BK,SET:LH,SET,Land and Houses,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
+MINT,MINT.BK,SET:MINT,SET,Minor International,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
+MTC,MTC.BK,SET:MTC,SET,Muangthai Capital,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
+OR,OR.BK,SET:OR,SET,PTT Oil and Retail Business,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
+OSP,OSP.BK,SET:OSP,SET,Osotspa,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
+PTT,PTT.BK,SET:PTT,SET,PTT,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
+PTTEP,PTTEP.BK,SET:PTTEP,SET,PTT Exploration and Production,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
+PTTGC,PTTGC.BK,SET:PTTGC,SET,PTT Global Chemical,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
+RATCH,RATCH.BK,SET:RATCH,SET,Ratch Group,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
+SCB,SCB.BK,SET:SCB,SET,Siam Commercial Bank,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
+SCC,SCC.BK,SET:SCC,SET,Siam Cement Group,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
+SCGP,SCGP.BK,SET:SCGP,SET,SCG Packaging,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
+TCAP,TCAP.BK,SET:TCAP,SET,Thanachart Capital,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
+TIDLOR,TIDLOR.BK,SET:TIDLOR,SET,Tidlor Holdings,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
+TISCO,TISCO.BK,SET:TISCO,SET,Tisco Financial Group,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
+TLI,TLI.BK,SET:TLI,SET,Thai Life Insurance,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
+TOP,TOP.BK,SET:TOP,SET,Thai Oil,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
+TRUE,TRUE.BK,SET:TRUE,SET,TRUE Corporation,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
+TTB,TTB.BK,SET:TTB,SET,TMBThanachart Bank,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
+TU,TU.BK,SET:TU,SET,Thai Union Group,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
+VGI,VGI.BK,SET:VGI,SET,VGI,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01
+WHA,WHA.BK,SET:WHA,SET,WHA Corporation,https://en.wikipedia.org/wiki/SET100_Index,2026-11-01

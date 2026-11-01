@@ -19,7 +19,11 @@ SOURCES = {
     "SET100": "https://en.wikipedia.org/wiki/SET100_Index",
     "SP500": "https://en.wikipedia.org/wiki/List_of_S%26P_500_companies",
     "NDX": "https://en.wikipedia.org/wiki/Nasdaq-100",
+    "NASDAQ_LISTED": "https://www.nasdaqtrader.com/dynamic/SymDir/nasdaqlisted.txt",
+    "OTHER_LISTED": "https://www.nasdaqtrader.com/dynamic/SymDir/otherlisted.txt",
 }
+# รหัสตลาดในไฟล์ otherlisted → ชื่อตลาดที่ TradingView ใช้นำหน้าชื่อหุ้น
+TV_EXCHANGE = {"N": "NYSE", "A": "AMEX", "P": "AMEX", "Z": "BATS", "V": "IEX"}
 
 
 def read_tables(url: str) -> list[pd.DataFrame]:
@@ -61,14 +65,38 @@ def build_us() -> pd.DataFrame:
     return df
 
 
+def us_exchanges() -> dict[str, str]:
+    """ชื่อหุ้นสหรัฐ → ตลาดที่จดทะเบียน (ไว้ทำชื่อแบบ NASDAQ:AAPL ให้ TradingView)"""
+    out = {}
+    for line in requests.get(SOURCES["NASDAQ_LISTED"], headers=HEADERS, timeout=30).text.splitlines()[1:]:
+        out[line.split("|")[0]] = "NASDAQ"
+    for line in requests.get(SOURCES["OTHER_LISTED"], headers=HEADERS, timeout=30).text.splitlines()[1:]:
+        parts = line.split("|")
+        if len(parts) > 2 and parts[2] in TV_EXCHANGE:
+            out[parts[0]] = TV_EXCHANGE[parts[2]]
+    return out
+
+
+def tv_symbols(df: pd.DataFrame, market: str) -> list[str]:
+    if market == "SET":
+        return [f"SET:{t}" for t in df["ticker"]]
+    try:
+        ex = us_exchanges()
+    except requests.RequestException:
+        print("  ดึงตลาดของหุ้นสหรัฐไม่ได้ ใช้ชื่อหุ้นอย่างเดียวใน TradingView")
+        ex = {}
+    return [f"{ex[t]}:{t}" if t in ex else t for t in df["ticker"]]
+
+
 def main() -> None:
     UNIVERSE_DIR.mkdir(exist_ok=True)
     today = date.today().isoformat()
     for market, builder in [("SET", build_set), ("US", build_us)]:
         df = builder()
         df["symbol"] = [to_symbol(t, market) for t in df["ticker"]]
+        df["tv_symbol"] = tv_symbols(df, market)
         df["retrieved"] = today
-        df = df[["ticker", "symbol", "market", "name", "source", "retrieved"]]
+        df = df[["ticker", "symbol", "tv_symbol", "market", "name", "source", "retrieved"]]
         df.to_csv(UNIVERSE_DIR / f"{market.lower()}.csv", index=False, encoding="utf-8")
         print(f"{market}: {len(df)} หุ้น → universe/{market.lower()}.csv")
 
