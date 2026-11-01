@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Setup Screener</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f6f5f1; --panel: #ffffff; --ink: #1d1d1b; --muted: #6b6a64; --line: #e3e1da;
+  --accent: #2f5d8a; --up: #1f8a5b; --down: #c4453c; --warn: #b7791f; --chip: #eeece6;
+  --base: #2f5d8a33;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #151514; --panel: #1e1e1c; --ink: #ecebe6; --muted: #9a9890; --line: #33322e;
+    --accent: #79a7d6; --up: #3fbf86; --down: #e2665c; --warn: #e0a84a; --chip: #2a2a27; --base: #79a7d633;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #151514; --panel: #1e1e1c; --ink: #ecebe6; --muted: #9a9890; --line: #33322e;
+  --accent: #79a7d6; --up: #3fbf86; --down: #e2665c; --warn: #e0a84a; --chip: #2a2a27; --base: #79a7d633;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.55 "IBM Plex Sans Thai", system-ui, sans-serif; }
+.num, td.n { font-family: "IBM Plex Mono", ui-monospace, monospace; font-variant-numeric: tabular-nums; }
+header { padding: 20px 16px 8px; max-width: 1280px; margin: 0 auto; }
+h1 { font-size: 22px; margin: 0 0 4px; font-weight: 600; }
+.sub { color: var(--muted); font-size: 13px; }
+main { max-width: 1280px; margin: 0 auto; padding: 8px 16px 40px; }
+.bar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 12px 0; }
+select, button { font: inherit; color: var(--ink); background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 6px 12px; cursor: pointer; }
+button.on { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: 16px; }
+@media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; }
+.card h2 { font-size: 15px; margin: 0 0 8px; font-weight: 600; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; margin-bottom: 16px; }
+.desc { color: var(--muted); font-size: 13px; margin: 0 0 8px; }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); gap: 8px; }
+.stat b { display: block; font: 500 18px "IBM Plex Mono", monospace; }
+.stat span { color: var(--muted); font-size: 12px; }
+ul.conds { margin: 0; padding-left: 18px; font-size: 13px; }
+.examples { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 4px; }
+.ex { flex: 0 0 200px; border: 1px solid var(--line); border-radius: 8px; padding: 6px; font-size: 12px; }
+.ex.bad { border-color: var(--down); }
+.tablewrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th { text-align: left; color: var(--muted); font-weight: 500; font-size: 12px; padding: 6px 8px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+td { padding: 7px 8px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+td.n, th.n { text-align: right; }
+tr.row { cursor: pointer; }
+tr.row:hover, tr.row.sel { background: var(--chip); }
+.tag { display: inline-block; font-size: 11px; padding: 1px 7px; border-radius: 99px; background: var(--chip); color: var(--muted); }
+.tag.pass { background: color-mix(in srgb, var(--up) 18%, transparent); color: var(--up); }
+.tag.sim { background: color-mix(in srgb, var(--accent) 18%, transparent); color: var(--accent); }
+.tag.bad { background: color-mix(in srgb, var(--down) 18%, transparent); color: var(--down); }
+.fb { font-size: 13px; }
+.fb.good { color: var(--up); } .fb.bad { color: var(--down); }
+.detail h3 { margin: 0; font-size: 18px; }
+.reasons { list-style: none; padding: 0; margin: 8px 0; font-size: 13px; }
+.reasons li { padding: 2px 0; }
+.reasons .ok { color: var(--up); } .reasons .no { color: var(--muted); }
+.feat { display: grid; grid-template-columns: 1fr auto; gap: 2px 12px; font-size: 12px; color: var(--muted); }
+.feat span:nth-child(even) { color: var(--ink); font-family: "IBM Plex Mono", monospace; text-align: right; }
+.actions { display: flex; gap: 8px; margin: 10px 0; flex-wrap: wrap; }
+.actions .good { border-color: var(--up); color: var(--up); }
+.actions .bad { border-color: var(--down); color: var(--down); }
+svg text { fill: var(--muted); font: 10px "IBM Plex Mono", monospace; }
+.empty { color: var(--muted); padding: 24px; text-align: center; }
+footer { color: var(--muted); font-size: 12px; max-width: 1280px; margin: 0 auto; padding: 0 16px 32px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Setup Screener</h1>
+  <div class="sub" id="meta"></div>
+</header>
+<main>
+  <div class="bar">
+    <label for="setup">Set-up</label>
+    <select id="setup"></select>
+    <span style="flex:1"></span>
+    <button data-m="ALL" class="mk on">ทั้งหมด</button>
+    <button data-m="SET" class="mk">หุ้นไทย</button>
+    <button data-m="US" class="mk">หุ้นสหรัฐ</button>
+  </div>
+  <div class="cards">
+    <div class="card"><h2 id="s-title"></h2><p class="desc" id="s-desc"></p><ul class="conds" id="s-conds"></ul></div>
+    <div class="card"><h2>ทดสอบย้อนหลัง</h2><p class="desc" id="bt-desc"></p><div id="bt"></div></div>
+  </div>
+  <div class="card" id="ex-card" style="margin-bottom:16px"><h2>รูปตัวอย่างของ set-up นี้</h2><div class="examples" id="examples"></div></div>
+  <div class="grid">
+    <div class="card">
+      <h2 id="list-title">หุ้นที่มีสัญญาณ</h2>
+      <div class="tablewrap"><table><thead><tr id="thead"></tr></thead><tbody id="rows"></tbody></table></div>
+      <div class="actions"><button id="export">ดาวน์โหลด feedback.csv</button><span class="desc" id="fb-count"></span></div>
+    </div>
+    <div class="card detail" id="detail"><div class="empty">กดที่หุ้นในตารางเพื่อดูกราฟ</div></div>
+  </div>
+</main>
+<footer>
+  เครื่องมือนี้คัดกรองหุ้นตามกฎที่ผู้ใช้กำหนดเท่านั้น ไม่ใช่คำแนะนำการลงทุน · ผลทดสอบย้อนหลังไม่รับประกันผลในอนาคต
+</footer>
+<script>
+const DATA = __DATA__;
+const $ = (id) => document.getElementById(id);
+const pct = (x, d = 0) => x == null || isNaN(x) ? "-" : (x * 100).toFixed(d) + "%";
+const sgn = (x, d = 1) => x == null || isNaN(x) ? "-" : (x > 0 ? "+" : "") + (x * 100).toFixed(d) + "%";
+let market = "ALL", setupName = null, selected = null;
+
+const store = {
+  get() { try { return JSON.parse(localStorage.getItem("fb") || "{}"); } catch { return {}; } },
+  set(v) { try { localStorage.setItem("fb", JSON.stringify(v)); } catch {} },
+};
+let feedback = store.get();
+const fbKey = (s) => `${s.setup}|${s.market}|${s.ticker}|${s.date}`;
+
+function nextDay(d) { const t = new Date(d + "T00:00:00Z"); t.setUTCDate(t.getUTCDate() + 1); return t.toISOString().slice(0, 10); }
+
+function chart(b, opt = {}) {
+  const W = 640, H = opt.h || 300, volH = H * 0.2, pad = { l: 4, r: 46, t: 8, b: 16 };
+  const n = b.c.length, priceH = H - volH - pad.t - pad.b - 6;
+  const lo = Math.min(...b.l, opt.baseLow ?? Infinity), hi = Math.max(...b.h);
+  const y = (p) => pad.t + (hi - p) / (hi - lo || 1) * priceH;
+  const bw = (W - pad.l - pad.r) / n, x = (i) => pad.l + i * bw + bw / 2;
+  const vmax = Math.max(...b.v) || 1;
+  let s = `<svg viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="กราฟราคา">`;
+  if (opt.baseLow != null && opt.baseTop != null) {
+    const x0 = opt.baseStartIdx != null ? x(opt.baseStartIdx) : pad.l;
+    s += `<rect x="${x0}" y="${y(opt.baseTop)}" width="${W - pad.r - x0}" height="${y(opt.baseLow) - y(opt.baseTop)}" fill="var(--base)"/>`;
+  }
+  for (let k = 0; k <= 4; k++) {
+    const p = lo + (hi - lo) * k / 4;
+    s += `<line x1="${pad.l}" x2="${W - pad.r}" y1="${y(p)}" y2="${y(p)}" stroke="var(--line)"/><text x="${W - pad.r + 4}" y="${y(p) + 3}">${p.toFixed(p < 10 ? 2 : 1)}</text>`;
+  }
+  for (let i = 0; i < n; i++) {
+    const up = b.c[i] >= b.o[i], col = up ? "var(--up)" : "var(--down)";
+    s += `<line x1="${x(i)}" x2="${x(i)}" y1="${y(b.h[i])}" y2="${y(b.l[i])}" stroke="${col}"/>`;
+    const top = y(Math.max(b.o[i], b.c[i])), h = Math.max(1, Math.abs(y(b.o[i]) - y(b.c[i])));
+    s += `<rect x="${x(i) - bw * 0.35}" y="${top}" width="${Math.max(1, bw * 0.7)}" height="${h}" fill="${col}"/>`;
+    const vh = b.v[i] / vmax * volH;
+    s += `<rect x="${x(i) - bw * 0.35}" y="${H - pad.b - vh}" width="${Math.max(1, bw * 0.7)}" height="${vh}" fill="${col}" opacity="0.35"/>`;
+  }
+  if (opt.markIdx != null) s += `<line x1="${x(opt.markIdx)}" x2="${x(opt.markIdx)}" y1="${pad.t}" y2="${H - pad.b}" stroke="var(--accent)" stroke-dasharray="3 3"/>`;
+  s += `<text x="${pad.l}" y="${H - 3}">${b.d[0]}</text><text x="${W - pad.r}" y="${H - 3}" text-anchor="end">${b.d[n - 1]}</text></svg>`;
+  return s;
+}
+
+function currentSetup() { return DATA.setups.find((s) => s.name === setupName); }
+
+function renderSetup() {
+  const s = currentSetup();
+  $("s-title").textContent = s.title || s.name;
+  $("s-desc").textContent = s.description || "";
+  const conds = s.type === "rule" ? s.conditions.map((c) => c.text)
+    : s.type === "builtin" ? [`คะแนนทรงตั้งต้น ≥ ${s.min_score} จาก 100 (ดูเกณฑ์รายข้อในหน้ารายละเอียดหุ้น)`]
+    : ["ยังไม่มีสูตร: เรียงตามความเหมือนกับรูปตัวอย่าง"];
+  $("s-conds").innerHTML = conds.map((c) => `<li>${c}</li>`).join("");
+  renderBacktest(s);
+  const ex = s.examples || [];
+  $("ex-card").style.display = ex.length ? "" : "none";
+  $("examples").innerHTML = ex.map((e) => {
+    const mi = e.chart.d.indexOf(e.signal_date);
+    return `<div class="ex ${e.label}"><b>${e.ticker}</b> <span class="tag ${e.label === "bad" ? "bad" : "pass"}">${e.label === "bad" ? "ไม่ใช่" : "ใช่"}</span> <span class="num">${e.signal_date}</span>${chart(e.chart, { h: 140, markIdx: mi })}</div>`;
+  }).join("");
+}
+
+function renderBacktest(s) {
+  const bt = s.backtest;
+  if (!bt) { $("bt-desc").textContent = "ยังไม่ได้ทดสอบ รัน python src/backtest.py แล้วสแกนใหม่"; $("bt").innerHTML = ""; return; }
+  const ms = market === "ALL" ? ["SET", "US"] : [market];
+  $("bt-desc").textContent = "เข้าราคาเปิดวันถัดไป · stop ใต้ขอบล่างฐาน · ถือ 60 วัน · ตัวเลขในวงเล็บ = ซื้อแบบไม่เลือกในตลาดเดียวกัน ถือ 60 วันโดยไม่มี stop";
+  $("bt").innerHTML = ms.map((m) => {
+    const r = bt[m]; if (!r) return "";
+    const a = r.all, b = r.baseline;
+    if (!a.n) return `<p class="desc">${m}: ไม่มีสัญญาณในอดีต</p>`;
+    const oos = r.out_of_sample && r.out_of_sample.n ? `<div class="stat"><b>${pct(r.out_of_sample.win60)}</b><span>ชนะ 60 วัน นอกช่วงตัวอย่าง (n=${r.out_of_sample.n})</span></div>` : "";
+    return `<p class="desc" style="margin-top:6px"><b>${m === "SET" ? "หุ้นไทย" : "หุ้นสหรัฐ"}</b> · ${r.period[0]} ถึง ${r.period[1]} · ${a.n} สัญญาณ</p>
+      <div class="stats">
+        <div class="stat"><b>${pct(a.win60)}</b><span>ชนะที่ 60 วัน (ตลาด ${pct(b.win60)})</span></div>
+        <div class="stat"><b>${sgn(a.avg60)}</b><span>เฉลี่ยต่อไม้ (ตลาด ${sgn(b.avg60)})</span></div>
+        <div class="stat"><b>${a.avgR60.toFixed(2)}R</b><span>R เฉลี่ยที่ 60 วัน</span></div>
+        <div class="stat"><b>${sgn(a.avg_win60)} / ${sgn(a.avg_loss60)}</b><span>กำไรเฉลี่ย / ขาดทุนเฉลี่ย</span></div>
+        <div class="stat"><b>${pct(r.first_60pct.win60)} → ${pct(r.last_40pct.win60)}</b><span>ชนะ ช่วงแรก → ช่วงหลัง ${r.split_date}</span></div>
+        ${oos}
+      </div>`;
+  }).join("");
+}
+
+function visibleSignals() {
+  return DATA.signals.filter((s) => s.setup === setupName && (market === "ALL" || s.market === market));
+}
+
+function renderTable() {
+  const s = currentSetup(), hasSim = (s.examples || []).some((e) => e.label === "good");
+  $("thead").innerHTML = `<th>หุ้น</th><th>ตลาด</th><th>สถานะ</th>${hasSim ? '<th class="n">ความเหมือน</th>' : ""}<th class="n">คะแนนทรง</th><th class="n">ราคา</th><th class="n">เสี่ยงถึง stop</th><th>ป้ายของคุณ</th>`;
+  const rows = visibleSignals();
+  $("list-title").textContent = `หุ้นที่มีสัญญาณ · วันที่ ${DATA.scan_date} (${rows.filter((r) => r.passed).length} ตัวผ่านสูตร)`;
+  if (!rows.length) { $("rows").innerHTML = `<tr><td colspan="8" class="empty">วันนี้ไม่มีหุ้นเข้าเงื่อนไข</td></tr>`; return; }
+  $("rows").innerHTML = rows.map((r, i) => {
+    const fb = feedback[fbKey(r)];
+    const status = r.passed ? '<span class="tag pass">ผ่านสูตร</span>' : '<span class="tag sim">คล้ายตัวอย่าง</span>';
+    return `<tr class="row ${selected === r ? "sel" : ""}" data-i="${i}">
+      <td><b>${r.ticker}</b></td><td>${r.market}</td><td>${status}${r.like_bad ? ' <span class="tag bad">คล้ายตัวอย่างไม่ใช่</span>' : ""}</td>
+      ${hasSim ? `<td class="n">${r.similarity?.toFixed(0) ?? "-"}</td>` : ""}
+      <td class="n">${r.score.toFixed(0)}</td><td class="n">${r.close.toFixed(r.close < 10 ? 2 : 1)}</td><td class="n">${pct(r.risk_pct, 1)}</td>
+      <td class="fb ${fb || ""}">${fb === "good" ? "✓ ใช่" : fb === "bad" ? "✗ ไม่ใช่" : ""}</td></tr>`;
+  }).join("");
+  document.querySelectorAll("tr.row").forEach((tr) => tr.onclick = () => { selected = rows[+tr.dataset.i]; renderTable(); renderDetail(); });
+  $("fb-count").textContent = `ติ๊กไว้ ${Object.keys(feedback).length} ตัว`;
+}
+
+function renderDetail() {
+  const r = selected; if (!r) return;
+  const s = currentSetup();
+  const ex = (s.examples || []).find((e) => e.ticker === r.best_example && e.label === "good");
+  const bsi = r.chart.d.indexOf(r.base_start);
+  const simTxt = r.sim_parts ? `<p class="desc">ความเหมือน ${r.similarity.toFixed(0)} = ทรงราคา ${r.sim_parts.sim_shape.toFixed(0)} · วอลุ่ม ${r.sim_parts.sim_volume.toFixed(0)} · ตัววัด ${r.sim_parts.sim_features.toFixed(0)} (เทียบกับตัวอย่าง ${r.best_example})</p>` : "";
+  $("detail").innerHTML = `
+    <h3>${r.ticker} <span class="tag">${r.market}</span> ${r.passed ? '<span class="tag pass">ผ่านสูตร</span>' : '<span class="tag sim">คล้ายตัวอย่าง</span>'}</h3>
+    <p class="desc">${r.name || ""} · ราคาปิด ${r.date}: <span class="num">${r.close}</span> · stop <span class="num">${r.stop}</span> (เสี่ยง ${pct(r.risk_pct, 1)}) · ฐานเริ่ม ${r.base_start}</p>
+    ${chart(r.chart, { baseLow: r.base_low, baseTop: r.base_top, baseStartIdx: bsi >= 0 ? bsi : null })}
+    ${ex ? `<p class="desc">ตัวอย่างที่คล้ายที่สุด: <b>${ex.ticker}</b> (วันสัญญาณ ${ex.signal_date})</p>${chart(ex.chart, { h: 180, markIdx: ex.chart.d.indexOf(ex.signal_date) })}` : ""}
+    ${simTxt}
+    <div class="actions">
+      <button class="good" id="fb-good">✓ ใช่ทรงนี้</button><button class="bad" id="fb-bad">✗ ไม่ใช่</button><button id="fb-clear">ล้างป้าย</button>
+    </div>
+    <h2 style="font-size:14px;margin:10px 0 0">เงื่อนไข</h2>
+    <ul class="reasons">${r.reasons.map((x) => `<li class="${x.ok ? "ok" : "no"}">${x.ok ? "✓" : "·"} ${x.text}</li>`).join("")}</ul>
+    <h2 style="font-size:14px;margin:10px 0 4px">ตัววัดทั้งหมด</h2>
+    <div class="feat">${Object.entries(r.features).map(([k, v]) => `<span>${FEATURE_LABELS[k] || k}</span><span>${v}</span>`).join("")}</div>
+    <p class="desc" style="margin-top:10px">ที่มา: ${DATA.source} · ดึงข้อมูล ${DATA.retrieved}</p>`;
+  const setFb = (v) => { if (v) feedback[fbKey(r)] = v; else delete feedback[fbKey(r)]; store.set(feedback); renderTable(); };
+  $("fb-good").onclick = () => setFb("good");
+  $("fb-bad").onclick = () => setFb("bad");
+  $("fb-clear").onclick = () => setFb(null);
+}
+
+const FEATURE_LABELS = {
+  drawdown: "ลงจาก high 52 สัปดาห์", days_since_high: "วันนับจาก high 52 สัปดาห์", sma200_slope: "ความชัน SMA200 (20 วัน)",
+  range_pos: "ตำแหน่งในกรอบ 52 สัปดาห์", off_low: "ห่างจาก low 52 สัปดาห์", base_days: "ความยาวฐาน (วันนับจาก low)",
+  base_width: "ความกว้างฐาน 60 วัน", touches: "จำนวนวันแตะขอบล่าง", higher_low: "low ยกตัว (20 vs 40 วันก่อน)",
+  atr_ratio: "ATR10 / ATR50", bb_width: "ความกว้าง Bollinger", vol_dry: "วอลุ่ม 20 / 60 วัน",
+  updown_vol: "วอลุ่มวันขึ้น / วันลง", dist_top: "ห่างจากขอบบนฐาน", vs_sma20: "ราคาเทียบ SMA20", vs_sma50: "ราคาเทียบ SMA50",
+};
+
+$("export").onclick = () => {
+  const rows = [["setup", "ticker", "market", "base_start", "entry_date", "label", "note"]];
+  for (const s of DATA.signals) {
+    const v = feedback[fbKey(s)];
+    if (v) rows.push([s.setup, s.ticker, s.market, s.base_start, nextDay(s.date), v, `dashboard ${DATA.scan_date}`]);
+  }
+  if (rows.length === 1) { alert("ยังไม่ได้ติ๊กหุ้นตัวไหน"); return; }
+  const blob = new Blob([rows.map((r) => r.join(",")).join("\n")], { type: "text/csv" });
+  const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = "feedback.csv"; a.click();
+};
+
+$("setup").innerHTML = DATA.setups.map((s) => `<option value="${s.name}">${s.title || s.name}</option>`).join("");
+$("setup").onchange = (e) => { setupName = e.target.value; selected = null; $("detail").innerHTML = '<div class="empty">กดที่หุ้นในตารางเพื่อดูกราฟ</div>'; renderSetup(); renderTable(); };
+document.querySelectorAll(".mk").forEach((b) => b.onclick = () => {
+  market = b.dataset.m; document.querySelectorAll(".mk").forEach((x) => x.classList.toggle("on", x === b));
+  renderBacktest(currentSetup()); renderTable();
+});
+$("meta").textContent = `สแกนวันที่ ${DATA.scan_date} · หุ้นไทย ${DATA.universe.SET} ตัว · หุ้นสหรัฐ ${DATA.universe.US} ตัว · ${DATA.source} · ดึงข้อมูล ${DATA.retrieved}`;
+setupName = DATA.setups[0].name;
+renderSetup(); renderTable();
+</script>
+</body>
+</html>
