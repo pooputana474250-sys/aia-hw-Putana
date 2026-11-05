@@ -10,4 +10,5 @@
 
 ## ลิงก์ผลงาน
 
-- [ลิงก์]
+- ตารางสรุปการสแกน (GitHub Pages): https://pooputana474250-sys.github.io/aia-hw-Putana/
+- ภาพหน้าวาดทรง / ผลหุ้นที่ทรงคล้าย: `app-screenshot.png` (หน้านี้ต้องรันในเครื่องด้วย `python src/app.py` ดู `USAGE.md`)

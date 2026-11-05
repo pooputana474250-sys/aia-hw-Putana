@@ -82,7 +82,12 @@ footer { color: var(--muted); font-size: 12px; max-width: 1280px; margin: 0 auto
 <body>
 <header>
   <h1>Setup Screener · ตารางสรุปประจำวัน</h1>
-  <p class="sub"><a href="http://127.0.0.1:8770/" style="color:var(--accent)">← กลับไปหน้าวาดทรง / อัปโหลดรูป / ดูกราฟหลายตัว</a> (ต้องเปิด <code>python src/app.py</code> ไว้)</p>
+  <p class="sub" id="local-link" hidden><a href="http://127.0.0.1:8770/" style="color:var(--accent)">← กลับไปหน้าวาดทรง / อัปโหลดรูป / ดูกราฟหลายตัว</a> (ต้องเปิด <code>python src/app.py</code> ไว้)</p>
+  <p class="sub" id="web-note" hidden>หน้านี้คือตารางสรุปจากการสแกนล่าสุดที่บันทึกไว้ใน repo ·
+    หน้าวาดทรง / อัปโหลดรูป ต้องรันในเครื่องด้วย <code>python src/app.py</code>
+    (<a href="app-screenshot.png" style="color:var(--accent)">ดูภาพหน้าจอ</a> ·
+    <a href="https://github.com/pooputana474250-sys/aia-hw-Putana/blob/main/USAGE.md" style="color:var(--accent)">วิธีใช้</a> ·
+    <a href="https://github.com/pooputana474250-sys/aia-hw-Putana" style="color:var(--accent)">repo</a>)</p>
   <div class="sub" id="meta"></div>
 </header>
 <main>
@@ -119,6 +124,9 @@ footer { color: var(--muted); font-size: 12px; max-width: 1280px; margin: 0 auto
 </footer>
 <script>
 const DATA = __DATA__;
+// ลิงก์ไปหน้าวาดทรงใช้ได้เฉพาะในเครื่องที่รัน app.py อยู่ บนเว็บ (GitHub Pages) แสดงคำอธิบายแทน
+const isLocal = ["127.0.0.1", "localhost"].includes(location.hostname);
+document.getElementById(isLocal ? "local-link" : "web-note").hidden = false;
 const $ = (id) => document.getElementById(id);
 
 /* ---------- กราฟใหญ่จาก TradingView + ส่งออก watchlist ---------- */

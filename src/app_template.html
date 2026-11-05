@@ -456,7 +456,7 @@ function renderResults() {
     busy(b, "…", async () => {
       const t = new Date(x.date + "T00:00:00Z"); t.setUTCDate(t.getUTCDate() + 1);
       await api("/api/example", { setup: r.setup.name, ticker: x.ticker, market: x.market, base_start: x.base_start,
-        entry_date: t.toISOString().slice(0, 10), label: b.dataset.l, note: `app ${STATE.scan_date}` });
+        entry_date: t.toISOString().slice(0, 10), label: b.dataset.l, note: `app ${STATE.scan_date}`, rescan: false });
       card.classList.add(b.dataset.l); await loadState();
       const info = STATE.setups.find((s) => s.name === r.setup.name);
       $("learn").disabled = info.good < 3;
@@ -488,7 +488,9 @@ async function loadState() {
   if (keep) $("sv-setup").value = keep;
 }
 drawPad();
-loadState().catch((e) => msg("ต่อเซิร์ฟเวอร์ไม่ได้: รัน python src/app.py ก่อน (" + e.message + ")", true));
+// เปิดด้วย #demo = ใส่ทรงหุ้นต้นรอบแล้ววิเคราะห์ให้ทันที (ใช้ทำภาพหน้าจอ output/app-screenshot.png)
+if (location.hash === "#demo") loadState().then(() => { $("sk-preset").click(); $("sk-run").click(); });
+else loadState().catch((e) => msg("ต่อเซิร์ฟเวอร์ไม่ได้: รัน python src/app.py ก่อน (" + e.message + ")", true));
 </script>
 </body>
 </html>

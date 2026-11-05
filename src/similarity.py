@@ -42,13 +42,31 @@ def zscore(values: np.ndarray) -> np.ndarray:
     return (values - values.mean()) / (sd if sd > 1e-12 else 1.0)
 
 
-def price_shape(close: np.ndarray) -> np.ndarray:
-    return zscore(resample(np.log(close)))
+_SERIES: dict[tuple, tuple[np.ndarray, np.ndarray]] = {}
 
 
-def volume_shape(volume: np.ndarray) -> np.ndarray:
-    v = pd.Series(np.log1p(volume)).rolling(5, min_periods=1).mean().to_numpy()
-    return zscore(resample(v))
+def log_series(df: pd.DataFrame) -> tuple[np.ndarray, np.ndarray]:
+    """log ราคาปิด และ log วอลุ่มเฉลี่ย 5 วัน ของทั้งประวัติ คำนวณครั้งเดียวต่อหุ้นแล้วเก็บไว้
+    (เดิมคำนวณใหม่ทุกช่วงทุกหุ้นทุกตัวอย่าง ทำให้สแกนจากตัวอย่างช้า)"""
+    key = (id(df), len(df))
+    if key not in _SERIES:
+        lv = pd.Series(np.log1p(df["Volume"].to_numpy(float))).rolling(5, min_periods=1).mean().to_numpy()
+        _SERIES[key] = (np.log(df["Close"].to_numpy(float)), lv)
+    return _SERIES[key]
+
+
+def resample_rows(rows: np.ndarray, n: int = PATH_LEN) -> np.ndarray:
+    """resample() ทีละหลายแถวพร้อมกัน (ผลเท่ากับ np.interp ของแต่ละแถว)"""
+    x = np.linspace(0, rows.shape[1] - 1, n)
+    i0 = np.floor(x).astype(int)
+    i1 = np.minimum(i0 + 1, rows.shape[1] - 1)
+    f = x - i0
+    return rows[:, i0] * (1 - f) + rows[:, i1] * f
+
+
+def zscore_rows(rows: np.ndarray) -> np.ndarray:
+    sd = rows.std(axis=1, keepdims=True)
+    return (rows - rows.mean(axis=1, keepdims=True)) / np.where(sd > 1e-12, sd, 1.0)
 
 
 def dtw_batch(template: np.ndarray, candidates: np.ndarray, band: int = BAND) -> np.ndarray:
@@ -81,8 +99,8 @@ def build_template(ticker: str, label: str, df: pd.DataFrame, feats: pd.DataFram
     chart_first = max(0, first - 20)
     return Template(
         ticker=ticker, label=label, signal_date=df.index[sig], length=len(window),
-        price_path=price_shape(window["Close"].to_numpy()),
-        volume_path=volume_shape(window["Volume"].to_numpy()),
+        price_path=zscore(resample(log_series(df)[0][first:sig + 1])),
+        volume_path=zscore(resample(log_series(df)[1][first:sig + 1])),
         features=feats.iloc[sig][list(FEATURES)],
         chart=df.iloc[chart_first:min(len(df), sig + 41)],
     )
@@ -90,16 +108,18 @@ def build_template(ticker: str, label: str, df: pd.DataFrame, feats: pd.DataFram
 
 def candidate_paths(prices: dict[str, pd.DataFrame], end_idx: dict[str, int], length: int):
     """ตัดช่วงยาว length ที่จบวันสแกนของทุกหุ้น คืน (symbols, price_paths, volume_paths)"""
-    symbols, pp, vp = [], [], []
+    symbols, pw, vw = [], [], []
     for s, df in prices.items():
         e = end_idx[s]
         if e + 1 < length:
             continue
-        w = df.iloc[e + 1 - length:e + 1]
+        lc, lv = log_series(df)
         symbols.append(s)
-        pp.append(price_shape(w["Close"].to_numpy()))
-        vp.append(volume_shape(w["Volume"].to_numpy()))
-    return symbols, np.array(pp), np.array(vp)
+        pw.append(lc[e + 1 - length:e + 1])
+        vw.append(lv[e + 1 - length:e + 1])
+    if not symbols:
+        return symbols, np.empty((0, PATH_LEN)), np.empty((0, PATH_LEN))
+    return (symbols, zscore_rows(resample_rows(np.array(pw))), zscore_rows(resample_rows(np.array(vw))))
 
 
 def feature_scale(feature_rows: pd.DataFrame) -> pd.Series:

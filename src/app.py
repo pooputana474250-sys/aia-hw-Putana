@@ -17,7 +17,8 @@ import json
 import re
 import traceback
 from datetime import datetime
-from http.server import BaseHTTPRequestHandler, HTTPServer
+from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+from threading import Lock
 from urllib.parse import parse_qs, urlparse
 
 from common import EXAMPLES_DIR, PRICE_META, ROOT, SETUPS_DIR, load_examples, price_meta, to_symbol
@@ -115,6 +116,8 @@ def api_add_example(q: dict) -> dict:
     add_example({"setup": name, "ticker": q["ticker"], "market": q["market"], "base_start": q["base_start"],
                  "entry_date": q["entry_date"], "label": q.get("label", "good"),
                  "image": q.get("image", ""), "note": q.get("note", "app")})
+    if q.get("rescan", True) is False:   # กด ✓/✗ ทีละตัว ไม่ต้องสแกนใหม่ทั้งตลาดทุกครั้ง
+        return {"ok": True}
     return run_setup(setup_by_name(name))
 
 
@@ -143,6 +146,7 @@ def api_upload(q: dict) -> dict:
     return {"image": path.relative_to(ROOT).as_posix()}
 
 
+API_LOCK = Lock()
 ROUTES = {"/api/state": api_state, "/api/chart": api_chart, "/api/sketch": api_sketch,
           "/api/save_sketch": api_save_sketch, "/api/example": api_add_example, "/api/run": api_run,
           "/api/learn": api_learn, "/api/upload": api_upload}
@@ -174,8 +178,10 @@ class Handler(BaseHTTPRequestHandler):
         if fn is None:
             return self._json(404, {"error": "ไม่มีหน้านี้"})
         try:
-            refresh_if_stale()
-            self._json(200, fn(q))
+            with API_LOCK:   # งานวิเคราะห์ทำทีละงาน ส่วนหน้าเว็บ/ไฟล์อื่นตอบได้ระหว่างรอ
+                refresh_if_stale()
+                result = fn(q)
+            self._json(200, result)
         except (ValueError, KeyError) as e:
             self._json(400, {"error": str(e)})
         except Exception as e:  # แสดงข้อผิดพลาดในหน้าเว็บ แทนที่จะให้เซิร์ฟเวอร์ล้ม
@@ -189,12 +195,17 @@ class Handler(BaseHTTPRequestHandler):
         n = int(self.headers.get("Content-Length", 0))
         self._handle(json.loads(self.rfile.read(n) or b"{}"))
 
+    def do_HEAD(self) -> None:   # ตัวตรวจว่าเซิร์ฟเวอร์พร้อมหรือยัง ส่งคำขอแบบนี้มา
+        self.send_response(200)
+        self.end_headers()
+
     def log_message(self, fmt: str, *args) -> None:
-        if "/api/" in (args[0] if args else ""):
-            print(f"  {args[0]}")
+        line = str(args[0]) if args else ""
+        if "/api/" in line:
+            print(f"  {line}")
 
 
 if __name__ == "__main__":
     refresh_if_stale()
     print(f"เปิด http://{HOST}:{PORT}  (วันสแกน {SCAN_DATE.date()} · กด Ctrl+C เพื่อปิด)")
-    HTTPServer((HOST, PORT), Handler).serve_forever()
+    ThreadingHTTPServer((HOST, PORT), Handler).serve_forever()

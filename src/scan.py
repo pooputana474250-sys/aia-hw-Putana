@@ -56,6 +56,7 @@ def scan_setup(setup: dict, stocks: dict[str, Stock], end_idx: dict[str, int], t
     liquid = today[today["liquid"]]
 
     passed, score = evaluate(setup, liquid)
+    _, all_parts = builtin_score(liquid)   # คำนวณครั้งเดียว แทนการคำนวณทีละหุ้นในลูปด้านล่าง
     table = pd.DataFrame({"passed": passed, "score": score})
     if goods:
         prices = {s: stocks[s].prices for s in liquid.index}
@@ -93,7 +94,6 @@ def scan_setup(setup: dict, stocks: dict[str, Stock], end_idx: dict[str, int], t
             chosen = pd.concat([chosen, similar])
         for sym, r in chosen.iterrows():
             s, f = stocks[sym], liquid.loc[sym]
-            _, parts = builtin_score(f.to_frame().T)
             i = end_idx[sym]
             base_low, close = float(f["base_low"]), float(s.prices["Close"].iloc[i])
             base_days = int(f["base_days"]) if pd.notna(f["base_days"]) else 0
@@ -110,7 +110,7 @@ def scan_setup(setup: dict, stocks: dict[str, Stock], end_idx: dict[str, int], t
                 "base_low": base_low, "base_top": float(f["base_top"]),
                 "base_start": s.prices.index[max(0, i - base_days)].strftime("%Y-%m-%d"),
                 "features": {k: feature_value_text(k, f[k]) for k in FEATURES},
-                "reasons": reasons(setup, f, parts.iloc[0]),
+                "reasons": reasons(setup, f, all_parts.loc[sym]),
                 "tv": s.tv,
                 "window": int(r["window"]) if has_sim and pd.notna(r.get("window")) else None,
                 # ทรงยาวให้เห็นทั้งช่วงที่จับคู่ได้ + ก่อนหน้าอีกนิด
